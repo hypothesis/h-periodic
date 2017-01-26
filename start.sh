@@ -5,4 +5,4 @@ if [ ! -n "$BROKER_URL" ]; then
   exit 1
 fi
 
-celery -b $BROKER_URL -A hperiodic beat
+supervisord -c supervisord.conf
