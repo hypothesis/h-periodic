@@ -14,5 +14,6 @@ Docker example
 
    $ make dockerj
    $ docker run \
+       -p 8080:8080
        -e BROKER_URL=amqp://user:password@rabbitmq.host//virtual-host \
        hypothesis/h-periodic:dev
