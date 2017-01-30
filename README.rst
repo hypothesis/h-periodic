@@ -12,7 +12,7 @@ Docker example
 
 .. code-block:: bash
 
-   $ make dockerj
+   $ make docker
    $ docker run \
        -p 8080:8080
        -e BROKER_URL=amqp://user:password@rabbitmq.host//virtual-host \
