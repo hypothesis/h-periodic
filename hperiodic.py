@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Celery configuration for a separata beat process.
+Celery configuration for a separate beat process.
 """
 
 from __future__ import absolute_import
