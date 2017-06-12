@@ -2,6 +2,7 @@ FROM gliderlabs/alpine:3.4
 MAINTAINER Hypothes.is Project and contributors
 
 RUN apk-install \
+    git \
     python \
     py-pip \
     && pip install --no-cache-dir -U pip supervisor
