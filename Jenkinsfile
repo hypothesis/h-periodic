@@ -1,45 +1,37 @@
 #!groovy
 
-def dockerTag = null
-def dockerImage = null
+@Library('pipeline-library') _
 
-def pushMaster(image) {
-    if (env.BRANCH_NAME == 'master') {
-        docker.withRegistry('', 'docker-hub-build') {
-            image.push()
-            image.push('latest')
+def img
+
+node {
+    stage('build') {
+        checkout(scm)
+        img = buildApp(name: 'hypothesis/h-periodic')
+    }
+
+    onlyOnMaster {
+        stage('release') {
+            releaseApp(image: img)
         }
     }
 }
 
-pipeline {
-    agent any
-
-    stages {
-        stage('setup') {
-            steps {
-                script {
-                    buildVersion = sh(
-                        script: 'python -c "import version; print(version.get_version())"',
-                        returnStdout: true
-                    ).trim()
-                    dockerTag = buildVersion.replace('+', '-')
-                    currentBuild.displayName = buildVersion
-                }
-            }
-        }
-
-        stage('build') {
-            steps {
-                sh "make docker DOCKER_TAG=${dockerTag}"
-                script {
-                    dockerImage = docker.image "hypothesis/h-periodic:${dockerTag}"
-                }
-            }
+onlyOnMaster {
+    milestone()
+    stage('qa deploy') {
+        lock(resource: 'h-periodic-qa-deploy', inversePrecedence: true) {
+            milestone()
+            deployApp(image: img, app: 'h-periodic', env: 'qa')
         }
     }
 
-    post {
-        success { pushMaster(dockerImage) }
+    milestone()
+    stage('prod deploy') {
+        input(message: "Deploy to prod?")
+        lock(resource: 'h-periodic-prod-deploy', inversePrecedence: true) {
+            milestone()
+            deployApp(image: img, app: 'h-periodic', env: 'prod')
+        }
     }
 }
