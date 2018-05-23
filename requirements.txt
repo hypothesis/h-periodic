@@ -1,2 +1,2 @@
-celery == 3.1.25  # Pin to latest 3.1.x to ensure forwards-compat with 4.x
+celery == 4.1.0
 Flask
