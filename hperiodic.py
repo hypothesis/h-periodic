@@ -12,7 +12,7 @@ from celery import Celery
 
 celery = Celery('h')
 celery.conf.update(
-    CELERYBEAT_SCHEDULE={
+    beat_schedule={
         'purge-deleted-annotations': {
             'task': 'h.tasks.cleanup.purge_deleted_annotations',
             'schedule': timedelta(hours=1)
@@ -34,5 +34,5 @@ celery.conf.update(
             'schedule': timedelta(hours=6)
         },
     },
-    CELERY_TASK_SERIALIZER='json',
+    task_serializer='json',
 )
