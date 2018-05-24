@@ -21,12 +21,21 @@ from ec2_metadata import ec2_metadata
 broker_url = os.getenv('BROKER_URL','')
 broker_transport_options = {}
 if broker_url.startswith('sqs://'):
+    # Prefix for SQS queue names to make it clearer which service the queues
+    # are associated with.
+    #
+    # This is configurable to support different h instances in the same AWS
+    # account.
+    #
+    # This prefix must match the one used for the corresponding h instance.
+    queue_name_prefix = os.getenv('SQS_QUEUE_NAME_PREFIX', 'hypothesis-h-')
+
     broker_transport_options = {
+        'queue_name_prefix': queue_name_prefix,
+
         # Use SQS from the same region as the EC2 instance on which h-periodic
         # is running.
         'region': ec2_metadata.region,
-        # Use the same Celery queue name prefix that 'h' uses.
-        'queue_name_prefix': 'hypothesis-h-',
     }
 
 celery = Celery('h')
