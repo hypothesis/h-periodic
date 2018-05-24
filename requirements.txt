@@ -1,2 +1,5 @@
+boto3  # for SQS (not using celery[sqs] because it uses wrong boto version)
 celery == 4.1.0
+ec2-metadata
+pycurl  # for SQS
 Flask
