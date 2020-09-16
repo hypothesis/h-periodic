@@ -7,7 +7,8 @@ WORKDIR /var/lib/h-periodic
 
 COPY requirements/requirements.txt ./
 
-# Install build deps, build then clean up.
+RUN apk add build-base linux-headers
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .

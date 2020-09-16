@@ -1,6 +1,7 @@
 import os
 
 import kombu
+import psutil
 from pyramid.config import Configurator
 from pyramid.view import exception_view_config, view_config, view_defaults
 
@@ -14,6 +15,11 @@ class StatusViews:
     @staticmethod
     @view_config()
     def status():
+        # First check that the `celery beat` process is running.
+        if not psutil.pid_exists(int(open("celerybeat.pid", "r").read())):
+            raise RuntimeError("It looks like `celery beat` isn't running")
+
+        # Next check that we can connect to the message broker at BROKER_URL.
         connection = kombu.Connection(os.environ["BROKER_URL"])
         try:
             connection.connect()
