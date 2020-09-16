@@ -1,4 +1,5 @@
 celery
 gunicorn
 pyramid
+psutil
 supervisor
