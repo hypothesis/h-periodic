@@ -2,3 +2,4 @@
 celerybeat-schedule
 celerybeat-schedule.*
 celerybeat.pid
+supervisord.log

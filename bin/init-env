@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -eu
+
+export INSTANCE_ID=$(wget -O - -T 1 http://169.254.169.254/1.0/meta-data/instance-id 2>/dev/null || echo '')
+
+exec "$@"
