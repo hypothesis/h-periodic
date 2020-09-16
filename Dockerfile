@@ -1,22 +1,17 @@
-FROM alpine:3.7
+FROM python:3.6.9-alpine3.10
 MAINTAINER Hypothes.is Project and contributors
 
-# Install system and runtime dependencies.
-RUN apk add --no-cache python2 py2-pip
-
-# Create the hypothesis user, group, home directory and package directory.
-RUN addgroup -S hypothesis && adduser -S -G hypothesis -h /var/lib/h-periodic hypothesis
+# Create the h-periodic user, group, home directory and package directory.
+RUN addgroup -S h-periodic && adduser -S -G h-periodic -h /var/lib/h-periodic h-periodic
 WORKDIR /var/lib/h-periodic
 
-COPY README.rst requirements.txt supervisord.conf start.sh hperiodic.py healthcheck.py ./
+COPY requirements/requirements.txt ./
 
 # Install build deps, build then clean up.
-RUN apk add --no-cache --virtual build-deps \
-    git \
-    && pip install --no-cache-dir -U pip supervisor \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apk del build-deps
+RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8080
-USER hypothesis
-CMD ./start.sh
+COPY . .
+
+EXPOSE 8001
+USER h-periodic
+CMD ["bin/init-env", "supervisord", "-c", "conf/supervisord.conf"]
