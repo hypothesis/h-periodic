@@ -27,6 +27,10 @@ celery.conf.update(
             "task": "h.tasks.cleanup.purge_removed_features",
             "schedule": timedelta(hours=6),
         },
+        "backfill-annotation-sequence-ids": {
+            "task": "h.tasks.temp.backfill_annotation_sequence_ids",
+            "schedule": timedelta(minutes=1),
+        },
     },
     task_serializer="json",
 )
