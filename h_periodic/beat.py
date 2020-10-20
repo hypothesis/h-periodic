@@ -32,12 +32,6 @@ celery.conf.update(
             "task": "h.tasks.cleanup.purge_removed_features",
             "schedule": timedelta(hours=6),
         },
-        "sync-annotations": {
-            "options": {"expires": 30},
-            "task": "h.tasks.indexer.sync_annotations",
-            "schedule": timedelta(minutes=1),
-            "kwargs": {"limit": 10000},
-        },
     },
     task_serializer="json",
 )
