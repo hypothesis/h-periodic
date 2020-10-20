@@ -8,7 +8,7 @@ process for scheduling periodic tasks for h's Celery workers to execute.
 
 ### You will need
 
-* h-periodic connects to the RabbitMQ process that h's `make dev` command runs,
+* h-periodic connects to the RabbitMQ process that h's `make services` command runs,
   so you'll need to install and run h first:
 
   * https://h.readthedocs.io/en/latest/developing/install/
