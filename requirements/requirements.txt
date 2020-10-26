@@ -14,7 +14,7 @@ kombu==4.6.11             # via celery
 pastedeploy==2.1.0        # via plaster-pastedeploy
 plaster-pastedeploy==0.7  # via pyramid
 plaster==1.0              # via plaster-pastedeploy, pyramid
-psutil==5.7.2             # via -r requirements/requirements.in
+psutil==5.7.3             # via -r requirements/requirements.in
 pyramid==1.10.4           # via -r requirements/requirements.in
 pytz==2020.1              # via celery
 supervisor==4.2.1         # via -r requirements/requirements.in
