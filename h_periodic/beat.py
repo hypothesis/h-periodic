@@ -36,7 +36,7 @@ celery.conf.update(
             "options": {"expires": 30},
             "task": "h.tasks.indexer.sync_annotations",
             "schedule": timedelta(minutes=1),
-            "kwargs": {"limit": 5000},
+            "kwargs": {"limit": 2500},
         },
     },
     task_serializer="json",
