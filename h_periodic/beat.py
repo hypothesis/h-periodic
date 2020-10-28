@@ -38,6 +38,11 @@ celery.conf.update(
             "schedule": timedelta(minutes=1),
             "kwargs": {"limit": 2500},
         },
+        "report-sync-annotations-queue-length": {
+            "options": {"expires": 30},
+            "task": "h.tasks.indexer.report_sync_annotations_queue_length",
+            "schedule": timedelta(minutes=1),
+        },
     },
     task_serializer="json",
 )
