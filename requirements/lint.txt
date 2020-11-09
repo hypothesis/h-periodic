@@ -22,7 +22,7 @@ psutil==5.7.3             # via -r requirements/requirements.txt
 pycodestyle==2.6.0        # via -r requirements/lint.in
 pydocstyle==5.1.1         # via -r requirements/lint.in
 pylint==2.6.0             # via -r requirements/lint.in
-pyramid==1.10.4           # via -r requirements/requirements.txt
+pyramid==1.10.5           # via -r requirements/requirements.txt
 pytz==2020.1              # via -r requirements/requirements.txt, celery
 six==1.15.0               # via astroid
 snowballstemmer==2.0.0    # via pydocstyle
