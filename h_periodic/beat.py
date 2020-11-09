@@ -40,7 +40,7 @@ celery.conf.update(
         },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
-            "task": "h.tasks.indexer.report_sync_annotations_queue_length",
+            "task": "h.tasks.indexer.report_job_queue_metrics",
             "schedule": timedelta(minutes=1),
         },
     },
