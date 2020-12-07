@@ -34,11 +34,6 @@ node {
 
 onlyOnMaster {
     milestone()
-    stage("qa deploy") {
-        deployApp(image: img, app: "h-periodic", env: "qa")
-    }
-
-    milestone()
     stage("prod deploy") {
         input(message: "Deploy to prod?")
         milestone()
