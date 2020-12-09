@@ -14,7 +14,7 @@ class StatusView:
     def __init__(self, _context, request):
         self.request = request
 
-    @view_config()
+    @view_config
     def status(self):
         data = {"h": self._get_status(self.H_PID_FILE, self.H_BROKER_VAR)}
 
