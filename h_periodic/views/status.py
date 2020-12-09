@@ -1,12 +1,12 @@
 import os
+from os import environ
 
 import kombu
 import psutil
 from kombu.exceptions import KombuError
-from pyramid.view import view_config, view_defaults
+from pyramid.view import view_config
 
 
-@view_defaults(route_name="status", renderer="json", request_method="GET")
 class StatusView:
     H_PID_FILE = "celerybeat.pid"
     H_BROKER_VAR = "BROKER_URL"
@@ -14,7 +14,7 @@ class StatusView:
     def __init__(self, _context, request):
         self.request = request
 
-    @view_config
+    @view_config(route_name="status", renderer="json", request_method="GET")
     def status(self):
         data = {"h": self._get_status(self.H_PID_FILE, self.H_BROKER_VAR)}
 
@@ -44,7 +44,7 @@ class StatusView:
 
     @classmethod
     def _check_broker(cls, broker_var):
-        broker_url = os.environ.get(broker_var)
+        broker_url = environ.get(broker_var)
 
         if broker_url:
             connection = kombu.Connection(broker_url)

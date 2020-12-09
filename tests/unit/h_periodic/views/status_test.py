@@ -11,9 +11,9 @@ from h_periodic.views.status import StatusView
 class TestStatusView:
     # pylint: disable=too-many-arguments
     def test_it_with_everything_ok(
-        self, tmpdir, pyramid_request, env_vars, psutil, kombu
+        self, tmpdir, pyramid_request, environ, psutil, kombu
     ):
-        env_vars[StatusView.H_BROKER_VAR] = sentinel.h_broker
+        environ[StatusView.H_BROKER_VAR] = sentinel.h_broker
 
         h_pid_file = tmpdir / StatusView.H_PID_FILE
         h_pid_file.write("1234")
@@ -34,8 +34,8 @@ class TestStatusView:
         }
         assert view.request.response.status_int == 200
 
-    def test_it_with_no_broker_url(self, pyramid_request, env_vars):
-        env_vars[StatusView.H_BROKER_VAR] = None
+    def test_it_with_no_broker_url(self, pyramid_request, environ):
+        environ[StatusView.H_BROKER_VAR] = None
 
         result = StatusView(sentinel.context, pyramid_request).status()
 
@@ -46,9 +46,9 @@ class TestStatusView:
 
     @pytest.mark.parametrize("exception", (KombuError, ConnectionRefusedError))
     def test_it_with_bad_broker_connection(
-        self, pyramid_request, env_vars, kombu, exception
+        self, pyramid_request, environ, kombu, exception
     ):
-        env_vars[StatusView.H_BROKER_VAR] = sentinel.h_broker
+        environ[StatusView.H_BROKER_VAR] = sentinel.h_broker
         kombu.Connection.return_value.connect.side_effect = exception
 
         result = StatusView(sentinel.context, pyramid_request).status()
@@ -89,11 +89,13 @@ class TestStatusView:
             os.chdir(cwd)
 
     @pytest.fixture(autouse=True)
-    def env_vars(self, patch):
-        env_vars = {}
-        environ = patch("h_periodic.views.status.os.environ")
-        environ.get = env_vars.get
+    def environ(self, patch):
+        environ = patch("h_periodic.views.status.environ")
 
+        # Make this dict like so multiple tests / fixtures can easily modify it
+        # mock.patch.dict can't be used as a context manager until Python 3.8
+        env_vars = {}
+        environ.get = env_vars.get
         return env_vars
 
     @pytest.fixture(autouse=True)
