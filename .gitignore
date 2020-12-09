@@ -1,4 +1,7 @@
+.tox/
 *.pyc
+.coverage
+.coverage.*
 celerybeat-schedule
 celerybeat-schedule.*
 celerybeat.pid

@@ -1,0 +1,4 @@
+pytest
+coverage
+h-matchers
+-r requirements.txt

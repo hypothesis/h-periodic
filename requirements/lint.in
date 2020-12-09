@@ -2,3 +2,4 @@ pylint
 pydocstyle
 pycodestyle
 -r requirements.txt
+-r tests.txt
