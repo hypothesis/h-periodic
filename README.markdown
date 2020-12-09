@@ -48,3 +48,10 @@ This will:
 **That's it!** You’ve finished setting up your h-periodic development
 environment. Run `make help` to see all the commands that're available for
 linting, code formatting, etc.
+
+### Configuration
+
+| Environment variable | Usage | Example |
+|----------------------|-------|---------|
+| `BROKER_URL`           | The `h` AMPQ broker | `amqp://user:password@rabbit.example.com:5672//` |
+| `CHECKMATE_BROKER_URL` | The `checkmate` AMPQ broker | `amqp://user:password@rabbit.example.com:5673//` |  
