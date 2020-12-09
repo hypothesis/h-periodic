@@ -1,0 +1,3 @@
+def test_sanity():
+    # Looks like we're ok!
+    ...
