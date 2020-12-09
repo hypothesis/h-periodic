@@ -2,7 +2,6 @@ import os
 
 import kombu
 import psutil
-from pyramid.config import Configurator
 from pyramid.view import exception_view_config, view_config, view_defaults
 
 
@@ -32,11 +31,3 @@ class StatusViews:
     def status_exception(self):
         self.request.response.status_int = 500
         return {"status": "error", "reason": repr(self.context)}
-
-
-def create_app(_global_config, **settings):
-    with Configurator(settings=settings) as config:
-        config.add_route("status", "/_status")
-        config.scan()
-
-    return config.make_wsgi_app()
