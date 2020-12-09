@@ -9,6 +9,7 @@ help:
 	@echo "make docker            Make the app's Docker image"
 	@echo "make clean             Delete development artefacts (cached files, "
 	@echo "                       dependencies, etc)"
+	@echo "make requirements      Compile all requirements files"
 
 .PHONY: services
 services:
@@ -74,3 +75,7 @@ DOCKER_TAG = dev
 .PHONY: python
 python:
 	@./bin/install-python
+
+.PHONY: requirements
+requirements:
+	@sh requirements/compile.sh
