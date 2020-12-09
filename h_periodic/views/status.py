@@ -8,8 +8,8 @@ from pyramid.view import view_config
 
 
 class StatusView:
-    H_PID_FILE = "celerybeat.pid"
-    H_BROKER_VAR = "BROKER_URL"
+    H_PID_FILE = "h-celerybeat.pid"
+    H_BROKER_VAR = "H_BROKER_URL"
     CHECKMATE_PID_FILE = "checkmate-celerybeat.pid"
     CHECKMATE_BROKER_VAR = "CHECKMATE_BROKER_URL"
 

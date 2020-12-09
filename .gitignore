@@ -2,9 +2,9 @@
 *.pyc
 .coverage
 .coverage.*
-celerybeat-schedule
-celerybeat-schedule.*
-celerybeat.pid
+h-celerybeat-schedule
+h-celerybeat-schedule.*
+h-celerybeat.pid
 checkmate-celerybeat-schedule
 checkmate-celerybeat-schedule.*
 checkmate-celerybeat.pid
