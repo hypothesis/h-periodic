@@ -5,4 +5,7 @@
 celerybeat-schedule
 celerybeat-schedule.*
 celerybeat.pid
+checkmate-celerybeat-schedule
+checkmate-celerybeat-schedule.*
+checkmate-celerybeat.pid
 supervisord.log
