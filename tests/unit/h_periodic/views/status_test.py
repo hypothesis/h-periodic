@@ -1,5 +1,5 @@
 import os
-from unittest.mock import sentinel
+from unittest.mock import call, sentinel
 
 import pytest
 from h_matchers import Any
@@ -9,41 +9,52 @@ from h_periodic.views.status import StatusView
 
 
 class TestStatusView:
-    # pylint: disable=too-many-arguments
-    def test_it_with_everything_ok(
-        self, tmpdir, pyramid_request, environ, psutil, kombu
-    ):
-        environ[StatusView.H_BROKER_VAR] = sentinel.h_broker
-
-        h_pid_file = tmpdir / StatusView.H_PID_FILE
-        h_pid_file.write("1234")
-
+    @pytest.mark.usefixtures("with_everything_running")
+    def test_it_with_everything_ok(self, pyramid_request, psutil, kombu):
         view = StatusView(sentinel.context, pyramid_request)
         result = view.status()
 
-        psutil.pid_exists.assert_called_once_with(1234)
+        assert psutil.pid_exists.call_args_list == [
+            call(1234),  # Once for H
+            call(4321),  # And once for Checkmate
+        ]
 
-        kombu.Connection.assert_called_once_with(sentinel.h_broker)
+        assert kombu.Connection.call_args_list == [
+            call(sentinel.h_broker),
+            call(sentinel.checkmate_broker),
+        ]
         connection = kombu.Connection.return_value
-        connection.connect.assert_called_once_with()
-        connection.close.assert_called_once_with()
+        assert connection.connect.call_count == 2
+        assert connection.close.call_count == 2
 
         assert result == {
             "h": {"beat": "ok", "connection": "ok", "status": "ok"},
+            "checkmate": {"beat": "ok", "connection": "ok", "status": "ok"},
             "status": "ok",
         }
         assert view.request.response.status_int == 200
 
-    def test_it_with_no_broker_url(self, pyramid_request, environ):
-        environ[StatusView.H_BROKER_VAR] = None
+    @pytest.mark.usefixtures("with_everything_running")
+    @pytest.mark.parametrize(
+        "product,env_var",
+        (
+            ["h", StatusView.H_BROKER_VAR],
+            ["checkmate", StatusView.CHECKMATE_BROKER_VAR],
+        ),
+    )
+    def test_it_with_no_broker_url(self, pyramid_request, environ, product, env_var):
+        environ[env_var] = None
 
         result = StatusView(sentinel.context, pyramid_request).status()
 
-        assert result == {
-            "h": Any.dict.containing({"connection": "down", "status": "down"}),
-            "status": "down",
-        }
+        assert result == Any.dict.containing(
+            {
+                product: Any.dict.containing({"connection": "down", "status": "down"}),
+                "status": "degraded",
+            }
+        )
 
+    @pytest.mark.usefixtures("with_everything_running")
     @pytest.mark.parametrize("exception", (KombuError, ConnectionRefusedError))
     def test_it_with_bad_broker_connection(
         self, pyramid_request, environ, kombu, exception
@@ -55,28 +66,49 @@ class TestStatusView:
 
         assert result == {
             "h": Any.dict.containing({"connection": "down", "status": "down"}),
+            "checkmate": Any.dict.containing({"connection": "down", "status": "down"}),
             "status": "down",
         }
 
-    def test_it_with_no_pid_file(self, pyramid_request, tmpdir):
+    @pytest.mark.usefixtures("with_everything_running")
+    @pytest.mark.parametrize(
+        "product,pid_file",
+        (("h", StatusView.H_PID_FILE), ("checkmate", StatusView.CHECKMATE_PID_FILE)),
+    )
+    def test_it_with_no_pid_file(self, pyramid_request, tmpdir, product, pid_file):
+        os.unlink(tmpdir / pid_file)
+
         result = StatusView(sentinel.context, pyramid_request).status()
 
-        assert result == {
-            "h": Any.dict.containing({"beat": "down", "status": "down"}),
-            "status": "down",
-        }
+        assert result == Any.dict.containing(
+            {
+                product: Any.dict.containing({"beat": "down", "status": "down"}),
+                "status": "degraded",
+            }
+        )
 
-    def test_it_with_pid_file_but_no_pid(self, pyramid_request, tmpdir, psutil):
-        h_pid_file = tmpdir / StatusView.H_PID_FILE
-        h_pid_file.write("1234")
+    @pytest.mark.usefixtures("with_everything_running")
+    def test_it_with_pid_file_but_no_pid(self, pyramid_request, psutil):
         psutil.pid_exists.return_value = False
 
         result = StatusView(sentinel.context, pyramid_request).status()
 
         assert result == {
             "h": Any.dict.containing({"beat": "down", "status": "down"}),
+            "checkmate": Any.dict.containing({"beat": "down", "status": "down"}),
             "status": "down",
         }
+
+    @pytest.fixture
+    def with_everything_running(self, environ, tmpdir):
+        environ[StatusView.H_BROKER_VAR] = sentinel.h_broker
+        environ[StatusView.CHECKMATE_BROKER_VAR] = sentinel.checkmate_broker
+
+        h_pid_file = tmpdir / StatusView.H_PID_FILE
+        h_pid_file.write("1234")
+
+        checkmate_pid_file = tmpdir / StatusView.CHECKMATE_PID_FILE
+        checkmate_pid_file.write("4321")
 
     @pytest.fixture
     def tmpdir(self, tmpdir):

@@ -10,17 +10,33 @@ from pyramid.view import view_config
 class StatusView:
     H_PID_FILE = "celerybeat.pid"
     H_BROKER_VAR = "BROKER_URL"
+    CHECKMATE_PID_FILE = "checkmate-celerybeat.pid"
+    CHECKMATE_BROKER_VAR = "CHECKMATE_BROKER_URL"
 
     def __init__(self, _context, request):
         self.request = request
 
     @view_config(route_name="status", renderer="json", request_method="GET")
     def status(self):
-        data = {"h": self._get_status(self.H_PID_FILE, self.H_BROKER_VAR)}
+        data = {
+            "h": self._get_status(self.H_PID_FILE, self.H_BROKER_VAR),
+            "checkmate": self._get_status(
+                self.CHECKMATE_PID_FILE, self.CHECKMATE_BROKER_VAR
+            ),
+        }
 
-        data["status"] = self._summarise(data["h"]["status"] == "ok")
+        h_ok = data["h"]["status"] == "ok"
+        checkmate_ok = data["checkmate"]["status"] == "ok"
 
-        self.request.response.status_int = 200 if data["status"] == "ok" else 500
+        if h_ok and checkmate_ok:
+            status_code, status = 200, "ok"
+        elif not h_ok and not checkmate_ok:
+            status_code, status = 500, "down"
+        else:
+            status_code, status = 200, "degraded"
+
+        data["status"] = status
+        self.request.response.status_int = status_code
 
         return data
 
