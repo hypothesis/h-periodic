@@ -5,6 +5,7 @@ help:
 	@echo "make lint              Run the code linter(s) and print any warnings"
 	@echo "make format            Correctly format the code"
 	@echo "make checkformatting   Crash if the code isn't correctly formatted"
+	@echo "make test              Run the unit tests and produce a coverage report"
 	@echo "make sure              Make sure that the formatter, linter, tests, etc all pass"
 	@echo "make docker            Make the app's Docker image"
 	@echo "make clean             Delete development artefacts (cached files, "
@@ -41,7 +42,7 @@ lint: python
 
 .PHONY: test
 test:
-	@true
+	@tox -q
 
 .PHONY: functests
 functests:
