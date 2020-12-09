@@ -1,9 +1,9 @@
 import functools
 from unittest import mock
-from pyramid.request import Request
-from pyramid import testing
 
 import pytest
+from pyramid import testing
+from pyramid.request import Request
 
 
 def autopatcher(request, target, **kwargs):
