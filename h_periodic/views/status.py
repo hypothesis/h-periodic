@@ -52,7 +52,7 @@ class StatusView:
             try:
                 connection.connect()
                 return True
-            except KombuError:
+            except (KombuError, ConnectionRefusedError):
                 pass
             finally:
                 connection.close()
