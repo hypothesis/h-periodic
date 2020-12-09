@@ -6,6 +6,7 @@ from celery import Celery
 
 celery = Celery("h")
 celery.conf.update(
+    beat_schedule_filename="h-celerybeat-schedule",
     beat_schedule={
         "purge-deleted-annotations": {
             "options": {"expires": 1800},

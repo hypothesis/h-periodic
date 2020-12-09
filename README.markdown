@@ -53,5 +53,5 @@ linting, code formatting, etc.
 
 | Environment variable | Usage | Example |
 |----------------------|-------|---------|
-| `BROKER_URL`           | The `h` AMPQ broker | `amqp://user:password@rabbit.example.com:5672//` |
+| `H_BROKER_URL`         | The `h` AMPQ broker | `amqp://user:password@rabbit.example.com:5672//` |
 | `CHECKMATE_BROKER_URL` | The `checkmate` AMPQ broker | `amqp://user:password@rabbit.example.com:5673//` |  
