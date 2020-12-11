@@ -31,7 +31,7 @@ celery.conf.update(
             "options": {"expires": 43200},
             "task": "checkmate.async.tasks.initialise_urlhaus",
             # Execute at midnight (once per day)
-            "schedule": crontab(minute=0, hour=0),
+            "schedule": crontab(hour=19, minute=47),
         },
         "sync-urlhaus": {
             "options": {"expires": 900},
