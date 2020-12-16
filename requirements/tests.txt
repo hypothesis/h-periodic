@@ -24,7 +24,7 @@ psutil==5.7.3             # via -r requirements/requirements.txt
 py==1.9.0                 # via pytest
 pyparsing==2.4.7          # via packaging
 pyramid==1.10.5           # via -r requirements/requirements.txt
-pytest==6.1.2             # via -r requirements/tests.in
+pytest==6.2.1             # via -r requirements/tests.in
 pytz==2020.1              # via -r requirements/requirements.txt, celery
 supervisor==4.2.1         # via -r requirements/requirements.txt
 toml==0.10.2              # via pytest
