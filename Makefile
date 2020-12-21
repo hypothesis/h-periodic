@@ -69,7 +69,7 @@ clean:
 	@find . -type d -name "__pycache__" -delete
 
 .PHONY: sure
-sure: checkformatting lint
+sure: checkformatting lint test functests
 
 DOCKER_TAG = dev
 
