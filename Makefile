@@ -2,6 +2,7 @@
 help:
 	@echo "make help              Show this help message"
 	@echo "make dev               Run the entire app (web server and other processes)"
+	@echo "make shell             Launch a Python shell in the dev environment"
 	@echo "make lint              Run the code linter(s) and print any warnings"
 	@echo "make format            Correctly format the code"
 	@echo "make checkformatting   Crash if the code isn't correctly formatted"
@@ -27,6 +28,10 @@ dev: python
 .PHONY: devdata
 devdata:
 	@true
+
+.PHONY: shell
+shell: python
+	@tox -qe dev --run-command ipython
 
 .PHONY: format
 format: python
