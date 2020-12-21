@@ -9,3 +9,4 @@ checkmate-celerybeat-schedule
 checkmate-celerybeat-schedule.*
 checkmate-celerybeat.pid
 supervisord.log
+*.egg-info
