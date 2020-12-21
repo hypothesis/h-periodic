@@ -9,7 +9,7 @@ astroid==2.4.2            # via pylint
 attrs==20.3.0             # via -r requirements/tests.txt, pytest
 billiard==3.6.3.0         # via -r requirements/requirements.txt, -r requirements/tests.txt, celery
 celery==4.4.7             # via -r requirements/requirements.txt, -r requirements/tests.txt
-coverage==5.3             # via -r requirements/tests.txt
+coverage==5.3.1           # via -r requirements/tests.txt
 gunicorn==20.0.4          # via -r requirements/requirements.txt, -r requirements/tests.txt
 h-matchers==1.2.10        # via -r requirements/tests.txt
 hupper==1.10.2            # via -r requirements/requirements.txt, -r requirements/tests.txt, pyramid
