@@ -2,8 +2,6 @@ import functools
 from unittest import mock
 
 import pytest
-from pyramid import testing
-from pyramid.request import Request
 
 
 def autopatcher(request, target, **kwargs):
@@ -19,17 +17,3 @@ def autopatcher(request, target, **kwargs):
 @pytest.fixture
 def patch(request):
     return functools.partial(autopatcher, request)
-
-
-@pytest.fixture
-def pyramid_config():
-    with testing.testConfig(settings={}) as config:
-        yield config
-
-
-@pytest.fixture
-def pyramid_request(pyramid_config):
-    pyramid_request = Request.blank("/dummy")
-    pyramid_request.registry = pyramid_config.registry
-
-    return pyramid_request

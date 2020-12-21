@@ -61,7 +61,7 @@ docker:
 run-docker:
 	# To run the Docker container locally, first build the Docker image using
 	# `make docker` and then set the environment variables below to appropriate
-	# values (see conf/development.ini for non-production quality examples).
+	# values.
 	@docker run \
 		--net h_default \
 		-e BROKER_URL=amqp://guest:guest@rabbit:5672// \
