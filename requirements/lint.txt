@@ -24,7 +24,7 @@ pastedeploy==2.1.0        # via -r requirements/requirements.txt, -r requirement
 plaster-pastedeploy==0.7  # via -r requirements/requirements.txt, -r requirements/tests.txt, pyramid
 plaster==1.0              # via -r requirements/requirements.txt, -r requirements/tests.txt, plaster-pastedeploy, pyramid
 pluggy==0.13.1            # via -r requirements/tests.txt, pytest
-psutil==5.7.3             # via -r requirements/requirements.txt, -r requirements/tests.txt
+psutil==5.8.0             # via -r requirements/requirements.txt, -r requirements/tests.txt
 py==1.9.0                 # via -r requirements/tests.txt, pytest
 pycodestyle==2.6.0        # via -r requirements/lint.in
 pydocstyle==5.1.1         # via -r requirements/lint.in
