@@ -1,16 +1,16 @@
 Periodic tasks
 ==============
 
-`h-periodic` runs a [Celery beat](https://docs.celeryproject.org/en/stable/userguide/periodic-tasks.html)
-process for scheduling periodic tasks for `h` and `checkmate`'s Celery workers 
+`h-periodic` runs [Celery beat](https://docs.celeryproject.org/en/stable/userguide/periodic-tasks.html)
+processes that schedule periodic tasks for `h` and `checkmate`'s Celery workers
 to execute.
 
 ## Installing h-periodic in a development environment
 
 ### You will need
 
-* h-periodic connects to the RabbitMQ process that `h` and `checkmate`'s 
-`make services` command runs, so you'll need to install and run them first:
+* h-periodic connects to the RabbitMQ processes that `h` and `checkmate`'s
+`make services` commands run, so you'll need to install and run them first:
 
   * https://h.readthedocs.io/en/latest/developing/install/
   * https://github.com/hypothesis/checkmate
@@ -38,8 +38,8 @@ remainder of the installation process:
 The first time you run `make dev` it might take a while to start because it'll
 need to install the dependencies.
 
-This will start the Celery beat processes, which periodically add tasks 
-to `h`'s and `checkmate`'s task queue.
+This will start the Celery beat processes, which periodically add tasks
+to `h`'s and `checkmate`'s task queues.
 
 **That's it!** You’ve finished setting up your h-periodic development
 environment. Run `make help` to see all the commands that're available for
@@ -50,4 +50,4 @@ linting, code formatting, etc.
 | Environment variable | Usage | Example |
 |----------------------|-------|---------|
 | `H_BROKER_URL`         | The `h` AMPQ broker | `amqp://user:password@rabbit.example.com:5672//` |
-| `CHECKMATE_BROKER_URL` | The `checkmate` AMPQ broker | `amqp://user:password@rabbit.example.com:5673//` |  
+| `CHECKMATE_BROKER_URL` | The `checkmate` AMPQ broker | `amqp://user:password@rabbit.example.com:5673//` |
