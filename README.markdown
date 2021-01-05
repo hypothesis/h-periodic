@@ -1,17 +1,19 @@
-Periodic tasks for h
-====================
+Periodic tasks
+==============
 
 `h-periodic` runs a [Celery beat](https://docs.celeryproject.org/en/stable/userguide/periodic-tasks.html)
-process for scheduling periodic tasks for h's Celery workers to execute.
+process for scheduling periodic tasks for `h` and `checkmate`'s Celery workers 
+to execute.
 
 ## Installing h-periodic in a development environment
 
 ### You will need
 
-* h-periodic connects to the RabbitMQ process that h's `make services` command runs,
-  so you'll need to install and run h first:
+* h-periodic connects to the RabbitMQ process that `h` and `checkmate`'s 
+`make services` command runs, so you'll need to install and run them first:
 
   * https://h.readthedocs.io/en/latest/developing/install/
+  * https://github.com/hypothesis/checkmate
 
 * [Git](https://git-scm.com/)
 
@@ -36,14 +38,8 @@ remainder of the installation process:
 The first time you run `make dev` it might take a while to start because it'll
 need to install the dependencies.
 
-This will:
-
-1. Start the health check server on <http://localhost:8080/_status>.
-
-   This endpoint is used by Elastic Beanstalk to check h-periodic's health.
-   You can also visit it in dev to check if things seem to be working.
-
-2. Start the Celery beat process itself, which periodically adds tasks to h's task queue.
+This will start the Celery beat processes, which periodically add tasks 
+to `h`'s and `checkmate`'s task queue.
 
 **That's it!** You’ve finished setting up your h-periodic development
 environment. Run `make help` to see all the commands that're available for
