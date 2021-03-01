@@ -81,7 +81,7 @@ pytz==2020.1
     #   celery
 snowballstemmer==2.0.0
     # via pydocstyle
-supervisor==4.2.1
+supervisor==4.2.2
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt

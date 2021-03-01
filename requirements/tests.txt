@@ -46,7 +46,7 @@ pytz==2020.1
     # via
     #   -r requirements/requirements.txt
     #   celery
-supervisor==4.2.1
+supervisor==4.2.2
     # via -r requirements/requirements.txt
 toml==0.10.2
     # via pytest
