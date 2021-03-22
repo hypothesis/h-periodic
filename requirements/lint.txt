@@ -39,7 +39,7 @@ iniconfig==1.1.1
     # via
     #   -r requirements/tests.txt
     #   pytest
-isort==5.7.0
+isort==5.8.0
     # via pylint
 kombu==4.6.11
     # via
