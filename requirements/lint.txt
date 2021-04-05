@@ -72,7 +72,7 @@ pyparsing==2.4.7
     # via
     #   -r requirements/tests.txt
     #   packaging
-pytest==6.2.2
+pytest==6.2.3
     # via -r requirements/tests.txt
 pytz==2020.1
     # via
