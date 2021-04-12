@@ -1,0 +1,10 @@
+- name: Set up Python
+  uses: actions/setup-python@v2
+  with:
+    python-version: ${{ needs.metadata.outputs.python_headline_version }}
+
+- name: Update pip
+  run: python -m pip install --upgrade pip
+
+- name: Install tox
+  run: python -m pip install tox

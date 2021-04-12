@@ -1,27 +1,78 @@
+# Loaded from: '.github/workflows/template/continuous-integration.yml'
 name: Continuous integration
 on: pull_request
 jobs:
-  backend:
+  metadata:
+    name: Metadata
+    runs-on: ubuntu-latest
+    outputs:
+      python_versions: ${{ steps.list-python-versions.outputs.python_versions }}
+      python_headline_version: ${{ steps.list-python-versions.outputs.python_headline_version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.2
+      - name: List Python versions
+        id: list-python-versions
+        run: |
+          pip install hdev
+          echo "::set-output name=python_versions::`hdev python_version --style json --floating`"
+          echo "::set-output name=python_headline_version::`hdev python_version --style plain --first`"
+  backend-lint:
+    name: Backend Lint
+    needs: metadata
     runs-on: ubuntu-latest
     env:
       TOX_PARALLEL_NO_SPINNER: 1
+      # entry-point: enabled/jobs.multi.env.yml [unused]
+      # entry-point: enabled/jobs.lint.env.yml [unused]
     steps:
+    # Loaded from: '.github/workflows/template/standard/jobs.multi.steps.python-with-tox.yml'
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.6.9
+        python-version: ${{ needs.metadata.outputs.python_headline_version }}
     - name: Update pip
       run: python -m pip install --upgrade pip
     - name: Install tox
       run: python -m pip install tox
-    - name: Checkout git repo
+    # End of: '.github/workflows/template/standard/jobs.multi.steps.python-with-tox.yml'
+    - name: Checkout code
       uses: actions/checkout@v2
-    - name: Cache the .tox dir
-      uses: actions/cache@v2
-      with:
-        path: .tox
-        key: ${{ runner.os }}-tox-${{ hashFiles('tox.ini', 'requirements/*', 'setup.py', 'setup.cfg') }}
-        restore-keys: |
-          ${{ runner.os }}-tox-
+    # entry-point: enabled/jobs.multi.steps.cache-tox.yml [unused]
     - name: Run tox
       run: tox --parallel auto -e checkformatting,lint
+  backend-tests:
+    name: Backend Tests
+    needs: metadata
+    runs-on: ubuntu-latest
+    # entry-point: enabled/jobs.multi.services.yml [unused]
+    # entry-point: enabled/jobs.backend-tests.services.yml [unused]
+    env:
+      TOX_PARALLEL_NO_SPINNER: 1
+      # entry-point: enabled/jobs.multi.env.yml [unused]
+      # entry-point: enabled/jobs.backend-tests.env.yml [unused]
+    steps:
+    # Loaded from: '.github/workflows/template/standard/jobs.multi.steps.python-with-tox.yml'
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ needs.metadata.outputs.python_headline_version }}
+    - name: Update pip
+      run: python -m pip install --upgrade pip
+    - name: Install tox
+      run: python -m pip install tox
+    # End of: '.github/workflows/template/standard/jobs.multi.steps.python-with-tox.yml'
+    - name: Checkout code
+      uses: actions/checkout@v2
+    # entry-point: enabled/jobs.backend-tests.steps.setup_databases.yml [unused]
+    # entry-point: enabled/jobs.multi.steps.yarn_build.yml [unused]
+    # entry-point: enabled/jobs.multi.steps.gulp_build.yml [unused]
+    # entry-point: enabled/jobs.multi.steps.cache-tox.yml [unused]
+    - name: Run tox
+      run: tox --parallel auto -e tests,functests,bddtests,coverage
+  # entry-point: enabled/jobs.frontend.yml [unused]
+# End of: '.github/workflows/template/continuous-integration.yml'

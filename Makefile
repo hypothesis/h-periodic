@@ -49,8 +49,16 @@ lint: python
 test:
 	@tox -q
 
+.PHONY: coverage
+coverage:
+	@true
+
 .PHONY: functests
 functests:
+	@true
+
+.PHONY: bddtests
+bddtests:
 	@true
 
 .PHONY: docker
