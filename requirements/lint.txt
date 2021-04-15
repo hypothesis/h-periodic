@@ -26,7 +26,7 @@ celery==4.4.7
     #   -r requirements/tests.txt
 coverage==5.5
     # via -r requirements/tests.txt
-h-matchers==1.2.10
+h-matchers==1.2.11
     # via -r requirements/tests.txt
 iniconfig==1.1.1
     # via
