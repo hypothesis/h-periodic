@@ -22,7 +22,7 @@ decorator==4.4.2
     #   traitlets
 ipython-genutils==0.2.0
     # via traitlets
-ipython==7.16.1
+ipython==7.22.0
     # via -r requirements/dev.in
 jedi==0.17.2
     # via ipython
