@@ -20,7 +20,7 @@ celery.conf.update(
     beat_schedule={
         "sync-blocklist": {
             "options": {"expires": 30},
-            "task": "checkmate.async.tasks.sync_blocklist",
+            "task": "checkmate.celery_async.tasks.sync_blocklist",
             "schedule": timedelta(minutes=1),
         },
         # Timings are listed here: https://urlhaus.abuse.ch/api/#retrieve
@@ -29,13 +29,13 @@ celery.conf.update(
         # covers the last 30 days
         "initialise-urlhaus": {
             "options": {"expires": 43200},
-            "task": "checkmate.async.tasks.initialize_urlhaus",
+            "task": "checkmate.celery_async.tasks.initialize_urlhaus",
             # Execute at midnight (once per day)
             "schedule": crontab(hour=0, minute=0),
         },
         "sync-urlhaus": {
             "options": {"expires": 900},
-            "task": "checkmate.async.tasks.sync_urlhaus",
+            "task": "checkmate.celery_async.tasks.sync_urlhaus",
             # Execute at quarter past the hour and quarter to (once per 30 min)
             "schedule": crontab(minute="15,45"),
         },
