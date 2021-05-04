@@ -6,27 +6,27 @@
 #
 amqp==2.6.1
     # via
-    #   -r requirements.txt
+    #   -r requirements/requirements.txt
     #   kombu
 attrs==20.3.0
     # via pytest
 billiard==3.6.3.0
     # via
-    #   -r requirements.txt
+    #   -r requirements/requirements.txt
     #   celery
 celery==4.4.7
-    # via -r requirements.txt
+    # via -r requirements/requirements.txt
 coverage==5.5
-    # via -r tests.in
+    # via -r requirements/tests.in
 h-matchers==1.2.11
-    # via -r tests.in
+    # via -r requirements/tests.in
 iniconfig==1.1.1
     # via pytest
 kombu==4.6.11
     # via
-    #   -r requirements.txt
+    #   -r requirements/requirements.txt
     #   celery
-packaging==20.7
+packaging==20.9
     # via pytest
 pluggy==0.13.1
     # via pytest
@@ -34,18 +34,18 @@ py==1.10.0
     # via pytest
 pyparsing==2.4.7
     # via packaging
-pytest==6.2.3
-    # via -r tests.in
+pytest==6.2.4
+    # via -r requirements/tests.in
 pytz==2020.1
     # via
-    #   -r requirements.txt
+    #   -r requirements/requirements.txt
     #   celery
 supervisor==4.2.2
-    # via -r requirements.txt
+    # via -r requirements/requirements.txt
 toml==0.10.2
     # via pytest
 vine==1.3.0
     # via
-    #   -r requirements.txt
+    #   -r requirements/requirements.txt
     #   amqp
     #   celery
