@@ -16,15 +16,13 @@ billiard==3.6.3.0
     #   celery
 celery==4.4.7
     # via -r requirements/requirements.txt
-decorator==4.4.2
-    # via
-    #   ipython
-    #   traitlets
+decorator==5.0.7
+    # via ipython
 ipython-genutils==0.2.0
     # via traitlets
 ipython==7.23.0
     # via -r requirements/dev.in
-jedi==0.17.2
+jedi==0.18.0
     # via ipython
 kombu==4.6.11
     # via
@@ -32,27 +30,25 @@ kombu==4.6.11
     #   celery
 matplotlib-inline==0.1.2
     # via ipython
-parso==0.7.1
+parso==0.8.2
     # via jedi
 pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-prompt-toolkit==3.0.8
+prompt-toolkit==3.0.18
     # via ipython
-ptyprocess==0.6.0
+ptyprocess==0.7.0
     # via pexpect
-pygments==2.7.4
+pygments==2.9.0
     # via ipython
 pytz==2020.1
     # via
     #   -r requirements/requirements.txt
     #   celery
-six==1.15.0
-    # via traitlets
 supervisor==4.2.2
     # via -r requirements/requirements.txt
-traitlets==4.3.3
+traitlets==5.0.5
     # via
     #   ipython
     #   matplotlib-inline

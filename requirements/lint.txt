@@ -43,7 +43,7 @@ lazy-object-proxy==1.6.0
     # via astroid
 mccabe==0.6.1
     # via pylint
-packaging==20.7
+packaging==20.9
     # via
     #   -r requirements/tests.txt
     #   pytest
