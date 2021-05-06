@@ -9,8 +9,6 @@ help:
 	@echo "make test              Run the unit tests and produce a coverage report"
 	@echo "make sure              Make sure that the formatter, linter, tests, etc all pass"
 	@echo "make docker            Make the app's Docker image"
-	@echo "make clean             Delete development artefacts (cached files, "
-	@echo "                       dependencies, etc)"
 
 .PHONY: services
 services:
@@ -66,11 +64,6 @@ run-docker:
 		-e BROKER_URL=amqp://guest:guest@rabbit:5672// \
 		-p 8080:8080 \
 		hypothesis/h-periodic:$(DOCKER_TAG)
-
-.PHONY: clean
-clean:
-	@find . -type f -name "*.py[co]" -delete
-	@find . -type d -name "__pycache__" -delete
 
 .PHONY: sure
 sure: checkformatting lint test functests
