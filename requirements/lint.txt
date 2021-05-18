@@ -57,7 +57,7 @@ py==1.10.0
     #   pytest
 pycodestyle==2.7.0
     # via -r requirements/lint.in
-pydocstyle==6.0.0
+pydocstyle==6.1.1
     # via -r requirements/lint.in
 pylint==2.8.2
     # via -r requirements/lint.in
