@@ -16,6 +16,13 @@ billiard==3.6.4.0
     #   celery
 celery==5.1.0
     # via -r requirements/requirements.txt
+click==7.1.2
+    # via
+    #   -r requirements/requirements.txt
+    #   celery
+    #   click-didyoumean
+    #   click-plugins
+    #   click-repl
 click-didyoumean==0.0.3
     # via
     #   -r requirements/requirements.txt
@@ -28,19 +35,12 @@ click-repl==0.2.0
     # via
     #   -r requirements/requirements.txt
     #   celery
-click==7.1.2
-    # via
-    #   -r requirements/requirements.txt
-    #   celery
-    #   click-didyoumean
-    #   click-plugins
-    #   click-repl
 decorator==5.0.7
     # via ipython
+ipython==7.25.0
+    # via -r requirements/dev.in
 ipython-genutils==0.2.0
     # via traitlets
-ipython==7.24.1
-    # via -r requirements/dev.in
 jedi==0.18.0
     # via ipython
 kombu==5.1.0
