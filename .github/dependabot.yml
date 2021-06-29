@@ -6,11 +6,6 @@ updates:
     interval: daily
     time: "10:00"
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: celery
-    versions:
-    - ">= 5.0.a"
-    - "< 5.1"
 
 - package-ecosystem: docker
   directory: "/"
