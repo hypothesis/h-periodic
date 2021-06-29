@@ -11,3 +11,11 @@ updates:
     versions:
     - ">= 5.0.a"
     - "< 5.1"
+
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  ignore:
+    # Allow only patch updates for docker images automatically
+    - update-types: ["version-update:semver-major", "version-update:semver-minor"]
