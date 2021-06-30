@@ -14,8 +14,15 @@ billiard==3.6.4.0
     # via
     #   -r requirements/requirements.txt
     #   celery
-celery==5.1.0
+celery==5.1.2
     # via -r requirements/requirements.txt
+click==7.1.2
+    # via
+    #   -r requirements/requirements.txt
+    #   celery
+    #   click-didyoumean
+    #   click-plugins
+    #   click-repl
 click-didyoumean==0.0.3
     # via
     #   -r requirements/requirements.txt
@@ -28,13 +35,6 @@ click-repl==0.2.0
     # via
     #   -r requirements/requirements.txt
     #   celery
-click==7.1.2
-    # via
-    #   -r requirements/requirements.txt
-    #   celery
-    #   click-didyoumean
-    #   click-plugins
-    #   click-repl
 coverage==5.5
     # via -r requirements/tests.in
 h-matchers==1.2.11
