@@ -12,6 +12,6 @@ updates:
   schedule:
     interval: daily
   ignore:
-    # Only send PRs for patch versions of Python images
+    # Only send PRs for patch versions of Python.
     - dependency-name: "python"
       update-types: ["version-update:semver-major", "version-update:semver-minor"]
