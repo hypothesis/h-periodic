@@ -6,7 +6,8 @@ help:
 	@echo "make lint              Run the code linter(s) and print any warnings"
 	@echo "make format            Correctly format the code"
 	@echo "make checkformatting   Crash if the code isn't correctly formatted"
-	@echo "make test              Run the unit tests and produce a coverage report"
+	@echo "make test              Run the unit tests"
+	@echo "make coverage          Print the unit test coverage report"
 	@echo "make sure              Make sure that the formatter, linter, tests, etc all pass"
 	@echo "make docker            Make the app's Docker image"
 
@@ -46,6 +47,10 @@ lint: python
 test:
 	@tox -q
 
+.PHONY: coverage
+coverage: python
+	@tox -qe coverage
+
 .PHONY: functests
 functests:
 	@true
@@ -66,7 +71,7 @@ run-docker:
 		hypothesis/h-periodic:$(DOCKER_TAG)
 
 .PHONY: sure
-sure: checkformatting lint test functests
+sure: checkformatting lint test coverage functests
 
 DOCKER_TAG = dev
 
