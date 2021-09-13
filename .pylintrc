@@ -43,6 +43,7 @@ disable=
     line-too-long,
 
     too-few-public-methods,
+    duplicate-code,
 
 good-names=
     # PyLint's default good names.

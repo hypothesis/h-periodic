@@ -5,6 +5,7 @@ from datetime import timedelta
 from os import environ
 
 from celery import Celery
+from kombu import Exchange, Queue
 
 
 def asbool(value):
@@ -22,6 +23,14 @@ if asbool(environ.get("DISABLE_H_BEAT")):  # pragma: nocover
 
 celery = Celery("h")
 celery.conf.update(
+    task_queues=[
+        Queue(
+            "celery",
+            durable=False,
+            routing_key="celery",
+            exchange=Exchange("celery", type="direct", durable=False),
+        )
+    ],
     beat_schedule_filename="h-celerybeat-schedule",
     beat_schedule={
         "purge-deleted-annotations": {
