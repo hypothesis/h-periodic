@@ -9,7 +9,7 @@ amqp==5.0.6
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
     #   kombu
-astroid==2.7.2
+astroid==2.8.0
     # via pylint
 attrs==20.3.0
     # via
@@ -89,7 +89,7 @@ pycodestyle==2.7.0
     # via -r requirements/lint.in
 pydocstyle==6.1.1
     # via -r requirements/lint.in
-pylint==2.10.2
+pylint==2.11.1
     # via -r requirements/lint.in
 pyparsing==2.4.7
     # via
@@ -118,6 +118,10 @@ toml==0.10.2
     #   -r requirements/tests.txt
     #   pylint
     #   pytest
+typing-extensions==3.10.0.2
+    # via
+    #   astroid
+    #   pylint
 vine==5.0.0
     # via
     #   -r requirements/requirements.txt
