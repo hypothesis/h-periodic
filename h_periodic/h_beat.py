@@ -53,7 +53,7 @@ celery.conf.update(
             "options": {"expires": 30},
             "task": "h.tasks.indexer.sync_annotations",
             "schedule": timedelta(minutes=1),
-            "kwargs": {"limit": 1000},
+            "kwargs": {"limit": 400},
         },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
