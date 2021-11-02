@@ -6,11 +6,7 @@ from os import environ
 
 from celery import Celery
 
-
-def asbool(value):
-    """Return True if value is any of "t", "true", "y", etc (case-insensitive)."""
-    return str(value).strip().lower() in ("t", "true", "y", "yes", "on", "1")
-
+from h_periodic._util import asbool
 
 # We don't want periodic tasks for h-qa because h-qa and h-prod share the same
 # database and search index.
