@@ -1,9 +1,18 @@
 """Celery beat scheduler process configuration."""
+import sys
 from datetime import timedelta
+from os import environ
 
 from celery import Celery
 from celery.schedules import crontab
 from kombu import Exchange, Queue
+
+from h_periodic._util import asbool
+
+if asbool(environ.get("DISABLE_CHECKMATE_BEAT")):  # pragma: nocover
+    print("checkmate_beat disabled by DISABLE_CHECKMATE_BEAT environment variable")
+    sys.exit()
+
 
 celery = Celery("checkmate")
 celery.conf.update(
