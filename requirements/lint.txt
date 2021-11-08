@@ -20,11 +20,11 @@ billiard==3.6.4.0
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
     #   celery
-celery==5.1.2
+celery==5.2.0
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
-click==7.1.2
+click==8.0.3
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
@@ -57,7 +57,7 @@ iniconfig==1.1.1
     #   pytest
 isort==5.10.0
     # via pylint
-kombu==5.1.0
+kombu==5.2.1
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
