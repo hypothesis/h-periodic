@@ -14,9 +14,9 @@ billiard==3.6.4.0
     # via
     #   -r requirements/requirements.txt
     #   celery
-celery==5.1.2
+celery==5.2.1
     # via -r requirements/requirements.txt
-click==7.1.2
+click==8.0.3
     # via
     #   -r requirements/requirements.txt
     #   celery
@@ -41,7 +41,7 @@ h-matchers==1.2.12
     # via -r requirements/tests.in
 iniconfig==1.1.1
     # via pytest
-kombu==5.1.0
+kombu==5.2.2
     # via
     #   -r requirements/requirements.txt
     #   celery
