@@ -72,7 +72,7 @@ six==1.16.0
     # via
     #   -r requirements/requirements.txt
     #   click-repl
-supervisor==4.2.2
+supervisor==4.2.3
     # via -r requirements/requirements.txt
 traitlets==5.0.5
     # via
