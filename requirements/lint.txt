@@ -109,7 +109,7 @@ six==1.16.0
     #   click-repl
 snowballstemmer==2.1.0
     # via pydocstyle
-supervisor==4.2.2
+supervisor==4.2.4
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt

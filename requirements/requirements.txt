@@ -30,7 +30,7 @@ pytz==2021.1
     # via celery
 six==1.16.0
     # via click-repl
-supervisor==4.2.2
+supervisor==4.2.4
     # via -r requirements/requirements.in
 vine==5.0.0
     # via

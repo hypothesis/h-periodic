@@ -67,7 +67,7 @@ six==1.16.0
     # via
     #   -r requirements/requirements.txt
     #   click-repl
-supervisor==4.2.2
+supervisor==4.2.4
     # via -r requirements/requirements.txt
 toml==0.10.2
     # via pytest
