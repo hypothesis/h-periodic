@@ -6,46 +6,46 @@
 #
 amqp==5.0.6
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   kombu
 backcall==0.2.0
     # via ipython
 billiard==3.6.4.0
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   celery
-celery==5.2.1
-    # via -r requirements/requirements.txt
+celery==5.2.2
+    # via -r requirements.txt
 click==8.0.3
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   celery
     #   click-didyoumean
     #   click-plugins
     #   click-repl
 click-didyoumean==0.0.3
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   celery
 click-plugins==1.1.1
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   celery
 click-repl==0.2.0
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   celery
 decorator==5.0.7
     # via ipython
 ipython==7.31.0
-    # via -r requirements/dev.in
+    # via -r dev.in
 ipython-genutils==0.2.0
     # via traitlets
 jedi==0.18.0
     # via ipython
 kombu==5.2.2
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   celery
 matplotlib-inline==0.1.2
     # via ipython
@@ -57,7 +57,7 @@ pickleshare==0.7.5
     # via ipython
 prompt-toolkit==3.0.18
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   click-repl
     #   ipython
 ptyprocess==0.7.0
@@ -66,27 +66,27 @@ pygments==2.9.0
     # via ipython
 pytz==2021.1
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   celery
 six==1.16.0
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   click-repl
 supervisor==4.2.4
-    # via -r requirements/requirements.txt
+    # via -r requirements.txt
 traitlets==5.0.5
     # via
     #   ipython
     #   matplotlib-inline
 vine==5.0.0
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   amqp
     #   celery
     #   kombu
 wcwidth==0.2.5
     # via
-    #   -r requirements/requirements.txt
+    #   -r requirements.txt
     #   prompt-toolkit
 
 # The following packages are considered to be unsafe in a requirements file:
