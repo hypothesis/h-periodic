@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements/lint.in
 #
-amqp==5.0.6
+amqp==5.0.9
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
@@ -20,7 +20,7 @@ billiard==3.6.4.0
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
     #   celery
-celery==5.2.2
+celery==5.2.3
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
@@ -57,7 +57,7 @@ iniconfig==1.1.1
     #   pytest
 isort==5.10.1
     # via pylint
-kombu==5.2.2
+kombu==5.2.3
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
@@ -97,7 +97,7 @@ pyparsing==2.4.7
     #   packaging
 pytest==6.2.5
     # via -r requirements/tests.txt
-pytz==2021.1
+pytz==2021.3
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt

@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements/tests.in
 #
-amqp==5.0.6
+amqp==5.0.9
     # via
     #   -r requirements/requirements.txt
     #   kombu
@@ -14,7 +14,7 @@ billiard==3.6.4.0
     # via
     #   -r requirements/requirements.txt
     #   celery
-celery==5.2.2
+celery==5.2.3
     # via -r requirements/requirements.txt
 click==8.0.3
     # via
@@ -41,7 +41,7 @@ h-matchers==1.2.12
     # via -r requirements/tests.in
 iniconfig==1.1.1
     # via pytest
-kombu==5.2.2
+kombu==5.2.3
     # via
     #   -r requirements/requirements.txt
     #   celery
@@ -59,7 +59,7 @@ pyparsing==2.4.7
     # via packaging
 pytest==6.2.5
     # via -r requirements/tests.in
-pytz==2021.1
+pytz==2021.3
     # via
     #   -r requirements/requirements.txt
     #   celery
