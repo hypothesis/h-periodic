@@ -4,11 +4,11 @@
 #
 #    pip-compile requirements/requirements.in
 #
-amqp==5.0.6
+amqp==5.0.9
     # via kombu
 billiard==3.6.4.0
     # via celery
-celery==5.2.2
+celery==5.2.3
     # via -r requirements/requirements.in
 click==8.0.3
     # via
@@ -22,11 +22,11 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.2.0
     # via celery
-kombu==5.2.2
+kombu==5.2.3
     # via celery
 prompt-toolkit==3.0.18
     # via click-repl
-pytz==2021.1
+pytz==2021.3
     # via celery
 six==1.16.0
     # via click-repl
