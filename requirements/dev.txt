@@ -16,7 +16,7 @@ billiard==3.6.4.0
     # via
     #   -r requirements/requirements.txt
     #   celery
-black==21.12b0
+black==22.1.0
     # via ipython
 celery==5.2.3
     # via -r requirements/requirements.txt
