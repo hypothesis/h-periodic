@@ -9,7 +9,7 @@ amqp==5.0.9
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
     #   kombu
-astroid==2.9.0
+astroid==2.11.1
     # via pylint
 attrs==20.3.0
     # via
@@ -49,6 +49,8 @@ click-repl==0.2.0
     #   celery
 coverage==6.3.2
     # via -r requirements/tests.txt
+dill==0.3.4
+    # via pylint
 h-matchers==1.2.12
     # via -r requirements/tests.txt
 iniconfig==1.1.1
@@ -89,7 +91,7 @@ pycodestyle==2.8.0
     # via -r requirements/lint.in
 pydocstyle==6.1.1
     # via -r requirements/lint.in
-pylint==2.12.2
+pylint==2.13.0
     # via -r requirements/lint.in
 pyparsing==2.4.7
     # via
@@ -113,11 +115,10 @@ supervisor==4.2.4
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
-toml==0.10.2
-    # via pylint
 tomli==2.0.0
     # via
     #   -r requirements/tests.txt
+    #   pylint
     #   pytest
 typing-extensions==3.10.0.2
     # via
