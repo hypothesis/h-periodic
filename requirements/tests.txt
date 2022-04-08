@@ -37,7 +37,7 @@ click-repl==0.2.0
     #   celery
 coverage==6.3.2
     # via -r requirements/tests.in
-h-matchers==1.2.12
+h-matchers==1.2.13
     # via -r requirements/tests.in
 iniconfig==1.1.1
     # via pytest
