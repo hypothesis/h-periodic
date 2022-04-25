@@ -97,7 +97,7 @@ pyparsing==2.4.7
     # via
     #   -r requirements/tests.txt
     #   packaging
-pytest==7.1.1
+pytest==7.1.2
     # via -r requirements/tests.txt
 pytz==2021.3
     # via
