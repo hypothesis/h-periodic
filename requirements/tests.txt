@@ -14,7 +14,7 @@ billiard==3.6.4.0
     # via
     #   -r requirements/requirements.txt
     #   celery
-celery==5.2.6
+celery==5.2.7
     # via -r requirements/requirements.txt
 click==8.0.3
     # via
