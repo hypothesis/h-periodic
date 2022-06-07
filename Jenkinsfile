@@ -25,14 +25,14 @@ node {
         img = buildApp(name: "hypothesis/h-periodic")
     }
 
-    onlyOnMaster {
+    onlyOnMain {
         stage("release") {
             releaseApp(image: img)
         }
     }
 }
 
-onlyOnMaster {
+onlyOnMain {
     milestone()
     stage("qa deploy") {
         deployApp(image: img, app: "h-periodic", env: "qa", region: "us-west-1")
