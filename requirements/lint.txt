@@ -24,6 +24,11 @@ celery==5.2.7
     # via
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
+certifi==2022.6.15
+    # via
+    #   -r requirements/requirements.txt
+    #   -r requirements/tests.txt
+    #   sentry-sdk
 click==8.0.3
     # via
     #   -r requirements/requirements.txt
@@ -104,6 +109,10 @@ pytz==2021.3
     #   -r requirements/requirements.txt
     #   -r requirements/tests.txt
     #   celery
+sentry-sdk==1.6.0
+    # via
+    #   -r requirements/requirements.txt
+    #   -r requirements/tests.txt
 six==1.16.0
     # via
     #   -r requirements/requirements.txt
@@ -126,6 +135,11 @@ typing-extensions==3.10.0.2
     # via
     #   astroid
     #   pylint
+urllib3==1.26.9
+    # via
+    #   -r requirements/requirements.txt
+    #   -r requirements/tests.txt
+    #   sentry-sdk
 vine==5.0.0
     # via
     #   -r requirements/requirements.txt

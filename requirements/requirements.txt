@@ -10,6 +10,8 @@ billiard==3.6.4.0
     # via celery
 celery==5.2.7
     # via -r requirements/requirements.in
+certifi==2022.6.15
+    # via sentry-sdk
 click==8.0.3
     # via
     #   celery
@@ -28,10 +30,14 @@ prompt-toolkit==3.0.18
     # via click-repl
 pytz==2021.3
     # via celery
+sentry-sdk==1.6.0
+    # via -r requirements/requirements.in
 six==1.16.0
     # via click-repl
 supervisor==4.2.4
     # via -r requirements/requirements.in
+urllib3==1.26.9
+    # via sentry-sdk
 vine==5.0.0
     # via
     #   amqp

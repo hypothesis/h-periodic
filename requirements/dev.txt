@@ -18,6 +18,10 @@ billiard==3.6.4.0
     #   celery
 celery==5.2.7
     # via -r requirements/requirements.txt
+certifi==2022.6.15
+    # via
+    #   -r requirements/requirements.txt
+    #   sentry-sdk
 click==8.0.3
     # via
     #   -r requirements/requirements.txt
@@ -74,6 +78,8 @@ pytz==2021.3
     # via
     #   -r requirements/requirements.txt
     #   celery
+sentry-sdk==1.6.0
+    # via -r requirements/requirements.txt
 six==1.16.0
     # via
     #   -r requirements/requirements.txt
@@ -86,6 +92,10 @@ traitlets==5.0.5
     # via
     #   ipython
     #   matplotlib-inline
+urllib3==1.26.9
+    # via
+    #   -r requirements/requirements.txt
+    #   sentry-sdk
 vine==5.0.0
     # via
     #   -r requirements/requirements.txt
