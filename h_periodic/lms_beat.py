@@ -30,7 +30,7 @@ celery.conf.update(
         "rotate-rsa-keys": {
             "options": {"expires": 600},
             "task": "lms.tasks.rsa_key.rotate_keys",
-            "schedule": timedelta(days=1),
+            "schedule": timedelta(hours=1),
         },
     },
     task_serializer="json",
