@@ -92,7 +92,7 @@ py==1.10.0
     # via
     #   -r requirements/tests.txt
     #   pytest
-pycodestyle==2.8.0
+pycodestyle==2.9.0
     # via -r requirements/lint.in
 pydocstyle==6.1.1
     # via -r requirements/lint.in
