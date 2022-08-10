@@ -1,0 +1,126 @@
+name: Release
+
+concurrency:
+  group: ${{ github.event.repository.name }}-release
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write # required to use AWS OIDC auth
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+  APP: ${{ github.event.repository.name }}
+  TYPE: 'deploy'
+  APP_DOCKER_VERSION: "latest"
+
+jobs:
+  continuous-integration:
+    uses: ./.github/workflows/continuous-integration.yml
+    name: continuous integration
+
+  create-docker-image:
+    name: create docker image
+    needs: continuous-integration
+    runs-on: ubuntu-latest
+    env:
+      name: ${{ github.event.repository.name }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: |
+        GIT_SHORT=$(git rev-parse --short HEAD)
+        GIT_COMMIT_TIMESTAMP=$(git --no-pager show -s --format=%ct $GIT_SHORT)
+        GIT_TS_CONVERTED=$(date -d @$GIT_COMMIT_TIMESTAMP +"%Y%m%d")
+        VERSION=$(echo "$GIT_TS_CONVERTED-g$GIT_SHORT")
+        export TAG=${VERSION//+/-}
+        echo "::set-env name=TAG::$TAG"
+        git archive HEAD | docker build -t "hypothesis/${name}:${TAG}" -
+    - name: push
+      run: |
+        echo "${{ secrets.DEPLOYMENT_DOCKER_USER_KEY }}" | docker login -u "${{ secrets.DEPLOYMENT_DOCKER_USER }}"  --password-stdin
+        docker push "hypothesis/${name}:${TAG}"
+        docker tag "hypothesis/${name}:${TAG}" "hypothesis/${name}:latest"
+        docker push "hypothesis/${name}:latest"
+
+  deploy-qa:
+    name: qa - us-west-1
+    needs: create-docker-image
+    runs-on: ubuntu-latest
+    env:
+      ENV: "qa"
+      REGION: "us-west-1"
+    steps:
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ secrets.DEPLOYMENT_AWS_ROLE_ARN }}
+        role-duration-seconds: 900
+        aws-region: us-west-1
+    - name: Checkout deployment repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.DEPLOYMENT_REPOSITORY }}
+        ssh-key: ${{ secrets.DEPLOYMENT_REPOSITORY_KEY }}
+    - name: install boto3
+      run: pip install boto3
+    - name: Run QA Deployment
+      run: |
+        echo $REGION
+        ./bin/init.sh
+
+  deploy-prod-us-west-1:
+    name: prod - us-west-1
+    needs: deploy-qa
+    runs-on: ubuntu-latest
+    env:
+      ENV: "prod"
+      REGION: "us-west-1"
+    environment: Production
+    steps:
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ secrets.DEPLOYMENT_AWS_ROLE_ARN }}
+        role-duration-seconds: 900
+        aws-region: us-west-1
+    - name: Checkout deployment repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.DEPLOYMENT_REPOSITORY }}
+        ssh-key: ${{ secrets.DEPLOYMENT_REPOSITORY_KEY }}
+    - name: install boto3
+      run: pip install boto3
+    - name: Run production deployment (us-west-1)
+      run: |
+        ./bin/init.sh
+
+  deploy-prod-ca-central-1:
+    name: prod - ca-central-1
+    needs: deploy-qa
+    runs-on: ubuntu-latest
+    env:
+      ENV: "prod"
+      REGION: "ca-central-1"
+    environment: Production
+    steps:
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ secrets.DEPLOYMENT_AWS_ROLE_ARN }}
+        role-duration-seconds: 900
+        aws-region: us-west-1
+    - name: Checkout deployment repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.DEPLOYMENT_REPOSITORY }}
+        ssh-key: ${{ secrets.DEPLOYMENT_REPOSITORY_KEY }}
+    - name: install boto3
+      run: pip install boto3
+    - name: Run production deployment (ca-central-1)
+      run: |
+        ./bin/init.sh

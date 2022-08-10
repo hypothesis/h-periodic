@@ -1,0 +1,69 @@
+name: Elastic Beanstalk
+
+# Manages AWS Elastic Beanstalk operations.
+#
+# For more information on deployments:
+# - https://github.com/hypothesis/deployment
+
+on:
+  workflow_dispatch:
+    inputs: 
+      Operation:
+        type: choice
+        description: "Choose the deployment operation. `redeploy` triggers a redeployment of the currently-deployed version. `deploy` releases and deploys a specific application version. `sync-env` synchronizes the environment definition."
+        required: true
+        default: 'redeploy'
+        options:
+          - redeploy
+          - deploy
+          - sync-env
+      Version:
+        description: "The tag of the application docker image to deploy. This is required if the selected deployment type is `deploy`."
+      Environment:
+        type: choice
+        description: "The environment to deploy. Can be either: 'qa' or 'prod'."
+        required: true
+        default: 'qa'
+        options:
+          - qa
+          - prod
+      Region:
+        type: choice
+        description: "The AWS region to target. Can be either: 'us-west-1', or 'ca-central-1', or 'all'."
+        required: true
+        default: 'all'
+        options:
+          - us-west-1
+          - ca-central-1
+          - all
+
+permissions:
+  id-token: write # required to use AWS OIDC auth
+
+env:
+  APP: ${{ github.event.repository.name }}
+  TYPE: ${{ github.event.inputs.Operation }}
+  ENV: ${{ github.event.inputs.Environment }}
+  REGION: ${{ github.event.inputs.Region }}
+  APP_DOCKER_VERSION: ${{ github.event.inputs.Version }}
+
+jobs:
+  eb-update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ secrets.DEPLOYMENT_AWS_ROLE_ARN }}
+        role-duration-seconds: 900
+        aws-region: us-west-1
+    - name: Checkout deployment repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.DEPLOYMENT_REPOSITORY }}
+        ssh-key: ${{ secrets.DEPLOYMENT_REPOSITORY_KEY }}
+    - name: Prepare environment
+      run: pip install boto3 pyaml
+    - name: ${{ github.event.inputs.Operation }}
+      run: |
+        ./bin/init.sh
