@@ -56,3 +56,4 @@ linting, code formatting, etc.
 | `DISABLE_CHECKMATE_BEAT` | Whether to disable the `checkmate_beat` process | `true` to disable the `checkmate_beat` process, `false` to leave it enabled. Defaults to `false` (leave it enabled) |
 
 | `DISABLE_LMS_BEAT` | Whether to disable the `lms_beat` process | `true` to disable, `false` to leave it enabled. Defaults to `false` (leave it enabled) |
+
