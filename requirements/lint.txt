@@ -63,6 +63,10 @@ dill==0.3.4
     # via pylint
 h-matchers==1.2.15
     # via -r requirements/tests.txt
+importlib-metadata==4.12.0
+    # via
+    #   -r requirements/tests.txt
+    #   pip-sync-faster
 iniconfig==1.1.1
     # via
     #   -r requirements/tests.txt
@@ -87,7 +91,7 @@ pep517==0.13.0
     # via
     #   -r requirements/tests.txt
     #   build
-pip-sync-faster==0.0.2
+pip-sync-faster==0.0.3
     # via
     #   -r requirements/lint.in
     #   -r requirements/tests.txt
@@ -179,6 +183,10 @@ wheel==0.37.1
     #   pip-tools
 wrapt==1.12.1
     # via astroid
+zipp==3.8.1
+    # via
+    #   -r requirements/tests.txt
+    #   importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==22.2.1
