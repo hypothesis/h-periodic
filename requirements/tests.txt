@@ -46,6 +46,8 @@ coverage==6.4.4
     # via -r requirements/tests.in
 h-matchers==1.2.15
     # via -r requirements/tests.in
+importlib-metadata==4.12.0
+    # via pip-sync-faster
 iniconfig==1.1.1
     # via pytest
 kombu==5.2.3
@@ -58,7 +60,7 @@ packaging==20.9
     #   pytest
 pep517==0.13.0
     # via build
-pip-sync-faster==0.0.2
+pip-sync-faster==0.0.3
     # via -r requirements/tests.in
 pip-tools==6.8.0
     # via
@@ -109,6 +111,8 @@ wcwidth==0.2.5
     #   prompt-toolkit
 wheel==0.37.1
     # via pip-tools
+zipp==3.8.1
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==22.2.1
