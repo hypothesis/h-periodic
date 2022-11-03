@@ -24,7 +24,7 @@ jobs:
 
   qa-us-west-1:
     needs: create-image
-    name: ${{ github.event.repository.name }}
+    name: QA
     uses: hypothesis/workflows/.github/workflows/deploy.yml@main
     with:
       operation: deploy
@@ -37,7 +37,7 @@ jobs:
 
   prod-us-west-1:
     needs: [create-image, qa-us-west-1]
-    name: ${{ github.event.repository.name }}
+    name: Production
     uses: hypothesis/workflows/.github/workflows/deploy.yml@main
     with:
       operation: deploy
@@ -50,7 +50,7 @@ jobs:
 
   prod-ca-central-1:
     needs: [create-image, qa-us-west-1]
-    name: ${{ github.event.repository.name }}
+    name: Production (Canada)
     uses: hypothesis/workflows/.github/workflows/deploy.yml@main
     with:
       operation: deploy
