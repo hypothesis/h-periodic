@@ -22,9 +22,8 @@ jobs:
       Application: ${{ github.event.repository.name }}
     secrets: inherit
 
-  qa-us-west-1:
+  QA:
     needs: create-image
-    name: QA
     uses: hypothesis/workflows/.github/workflows/deploy.yml@main
     with:
       operation: deploy
@@ -35,9 +34,8 @@ jobs:
       docker_tag: ${{ needs.create-image.outputs.docker_tag }}
     secrets: inherit
 
-  prod-us-west-1:
-    needs: [create-image, qa-us-west-1]
-    name: Production
+  Production:
+    needs: [create-image, QA]
     uses: hypothesis/workflows/.github/workflows/deploy.yml@main
     with:
       operation: deploy
@@ -48,8 +46,8 @@ jobs:
       docker_tag: ${{ needs.create-image.outputs.docker_tag }}
     secrets: inherit
 
-  prod-ca-central-1:
-    needs: [create-image, qa-us-west-1]
+  Production_Canada:
+    needs: [create-image, QA]
     name: Production (Canada)
     uses: hypothesis/workflows/.github/workflows/deploy.yml@main
     with:
