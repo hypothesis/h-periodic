@@ -29,6 +29,7 @@ jobs:
     with:
       operation: deploy
       github_environment_name: QA
+      github_environment_url: https://my.papertrailapp.com/groups/22067362/events
       aws_region: us-west-1
       elasticbeanstalk_application: h-periodic
       elasticbeanstalk_environment: qa
@@ -41,6 +42,7 @@ jobs:
     with:
       operation: deploy
       github_environment_name: Production
+      github_environment_url: https://my.papertrailapp.com/groups/22067372/events
       aws_region: us-west-1
       elasticbeanstalk_application: h-periodic
       elasticbeanstalk_environment: prod
@@ -54,6 +56,7 @@ jobs:
     with:
       operation: deploy
       github_environment_name: Production (Canada)
+      github_environment_url: https://my.papertrailapp.com/groups/28315571/events
       aws_region: ca-central-1
       elasticbeanstalk_application: h-periodic
       elasticbeanstalk_environment: prod
