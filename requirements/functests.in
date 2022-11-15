@@ -1,5 +1,6 @@
 pip-tools
 -r prod.txt
+httpretty
+pytest
 factory-boy
-ipython
-supervisor
+h-matchers
