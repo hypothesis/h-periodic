@@ -5,11 +5,11 @@ MAINTAINER Hypothes.is Project and contributors
 RUN addgroup -S h-periodic && adduser -S -G h-periodic -h /var/lib/h-periodic h-periodic
 WORKDIR /var/lib/h-periodic
 
-COPY requirements/requirements.txt ./
+COPY requirements/prod.txt ./
 
 RUN apk add build-base linux-headers
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r prod.txt
 
 COPY . .
 
