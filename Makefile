@@ -1,97 +1,81 @@
+comma := ,
+
 .PHONY: help
-help:
-	@echo "make help              Show this help message"
-	@echo "make dev               Run the entire app (web server and other processes)"
-	@echo "make shell             Launch a Python shell in the dev environment"
-	@echo "make lint              Run the code linter(s) and print any warnings"
-	@echo "make format            Correctly format the code"
-	@echo "make checkformatting   Crash if the code isn't correctly formatted"
-	@echo "make test              Run the unit tests"
-	@echo "make coverage          Print the unit test coverage report"
-	@echo "make sure              Make sure that the formatter, linter, tests, etc all pass"
-	@echo "make docker            Make the app's Docker image"
+help = help::; @echo $$$$(tput bold)$(strip $(1)):$$$$(tput sgr0) $(strip $(2))
+$(call help,make help,print this help message)
 
 .PHONY: services
-services:
-	@true
-
-.PHONY: db
-db:
-	@true
-
-.PHONY: dev
-dev: python
-	@tox -qe dev
 
 .PHONY: devdata
-devdata:
-	@true
+
+.PHONY: dev
+$(call help,make dev,run the whole app \(all workers\))
+dev: python
+	@pyenv exec tox -qe dev
 
 .PHONY: shell
+$(call help,make shell,"launch a Python shell in this project's virtualenv")
 shell: python
-	@tox -qe dev --run-command ipython
-
-.PHONY: format
-format: python
-	@tox -qe format
-
-.PHONY: checkformatting
-checkformatting: python
-	@tox -qe checkformatting
+	@pyenv exec tox -qe dev --run-command 'ipython'
 
 .PHONY: lint
+$(call help,make lint,"lint the code and print any warnings")
 lint: python
-	@tox -qe lint
+	@pyenv exec tox -qe lint
+
+.PHONY: format
+$(call help,make format,"format the code")
+format: python
+	@pyenv exec tox -qe format
+
+.PHONY: checkformatting
+$(call help,make checkformatting,"crash if the code isn't correctly formatted")
+checkformatting: python
+	@pyenv exec tox -qe checkformatting
 
 .PHONY: test
-test:
-	@tox -q
+$(call help,make test,"run the unit tests in Python 3.8")
+test: python
+	@pyenv exec tox -qe tests
 
 .PHONY: coverage
+$(call help,make coverage,"run the tests and print the coverage report")
 coverage: python
-	@tox -qe coverage
+	@pyenv exec tox -qe 'tests,coverage'
 
 .PHONY: functests
-functests:
-	@true
+$(call help,make functests,"run the functional tests in Python 3.8")
+functests: python
+	@pyenv exec tox -qe functests
 
-.PHONY: docker
-docker:
-	@git archive --format=tar.gz HEAD | docker build -t hypothesis/h-periodic:$(DOCKER_TAG) -
-
-.PHONY: run-docker
-run-docker:
-	# To run the Docker container locally, first build the Docker image using
-	# `make docker` and then set the environment variables below to appropriate
-	# values.
-	@docker run \
-		--net h_default \
-		-e BROKER_URL=amqp://guest:guest@rabbit:5672// \
-		-p 8080:8080 \
-		hypothesis/h-periodic:$(DOCKER_TAG)
+.PHONY: sure
+$(call help,make sure,"make sure that the formatting$(comma) linting and tests all pass")
+sure: python
+sure:
+	@pyenv exec tox --parallel -qe 'checkformatting,lint,tests,coverage,functests'
 
 # Tell make how to compile requirements/*.txt files.
 #
 # `touch` is used to pre-create an empty requirements/%.txt file if none
 # exists, otherwise tox crashes.
 #
-# $(subst) is used because in the special case of making requirements.txt we
-# actually need to touch dev.txt not requirements.txt and we need to run
-# `tox -e dev ...` not `tox -e requirements ...`
+# $(subst) is used because in the special case of making prod.txt we actually
+# need to touch dev.txt not prod.txt and we need to run `tox -e dev ...`
+# not `tox -e prod ...`
 #
 # $(basename $(notdir $@))) gets just the environment name from the
 # requirements/%.txt filename, for example requirements/foo.txt -> foo.
 requirements/%.txt: requirements/%.in
-	@touch -a $(subst requirements.txt,dev.txt,$@)
-	@tox -qe $(subst requirements,dev,$(basename $(notdir $@))) --run-command 'pip --quiet --disable-pip-version-check install pip-tools'
-	@tox -qe $(subst requirements,dev,$(basename $(notdir $@))) --run-command 'pip-compile --allow-unsafe --quiet $(args) $<'
+	@touch -a $(subst prod.txt,dev.txt,$@)
+	@tox -qe $(subst prod,dev,$(basename $(notdir $@))) --run-command 'pip --quiet --disable-pip-version-check install pip-tools'
+	@tox -qe $(subst prod,dev,$(basename $(notdir $@))) --run-command 'pip-compile --allow-unsafe --quiet $(args) $<'
 
 # Inform make of the dependencies between our requirements files so that it
 # knows what order to re-compile them in and knows to re-compile a file if a
 # file that it depends on has been changed.
-requirements/dev.txt: requirements/requirements.txt
-requirements/tests.txt: requirements/requirements.txt
-requirements/functests.txt: requirements/requirements.txt
+requirements/dev.txt: requirements/prod.txt
+requirements/tests.txt: requirements/prod.txt
+requirements/functests.txt: requirements/prod.txt
 requirements/lint.txt: requirements/tests.txt requirements/functests.txt
 
 # Add a requirements target so you can just run `make requirements` to
@@ -105,13 +89,38 @@ requirements/lint.txt: requirements/tests.txt requirements/functests.txt
 # requirements/*.in files from disk ($(wildcard requirements/*.in)) and replace
 # the .in's with .txt's.
 .PHONY: requirements requirements/
+$(call help,make requirements,"compile the requirements files")
 requirements requirements/: $(foreach file,$(wildcard requirements/*.in),$(basename $(file)).txt)
 
-.PHONY: sure
-sure: checkformatting lint test coverage functests
+.PHONY: template
+$(call help,make template,"update from the latest cookiecutter template")
+template: python
+	@pyenv exec tox -e template -- $$(if [ -n "$${template+x}" ]; then echo "--template $$template"; fi) $$(if [ -n "$${checkout+x}" ]; then echo "--checkout $$checkout"; fi) $$(if [ -n "$${directory+x}" ]; then echo "--directory $$directory"; fi)
 
 DOCKER_TAG = dev
 
+.PHONY: docker
+$(call help,make docker,"make the app's docker image")
+docker:
+	@git archive --format=tar HEAD | docker build -t hypothesis/h-periodic:$(DOCKER_TAG) -
+
+.PHONY: run-docker
+$(call help,make docker-run,"run the app's docker image")
+docker-run:
+	@docker run \
+		--add-host host.docker.internal:host-gateway \
+		--env-file .docker.env \
+		hypothesis/h-periodic:$(DOCKER_TAG)
+
+.PHONY: clean
+$(call help,make clean,"delete temporary files etc")
+clean:
+	@rm -rf build dist .tox
+	@find . -path '*/__pycache__*' -delete
+	@find . -path '*.egg-info*' -delete
+
 .PHONY: python
 python:
-	@./bin/install-python
+	@bin/make_python
+
+-include h_periodic.mk
