@@ -11,13 +11,13 @@ on:
       - main
 
 jobs:
-  continuous-integration:
-    uses: ./.github/workflows/continuous-integration.yml
-    name: continuous integration
+  CI:
+    uses: ./.github/workflows/ci.yml
+    name: CI
 
   Docker_Hub:
     name: Docker Hub
-    needs: continuous-integration
+    needs: CI
     uses: hypothesis/workflows/.github/workflows/dockerhub.yml@main
     with:
       Application: ${{ github.event.repository.name }}
