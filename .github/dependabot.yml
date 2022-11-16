@@ -1,20 +1,17 @@
 version: 2
 updates:
-- package-ecosystem: "pip"
+- package-ecosystem: pip
   directory: "/"
   schedule:
-    interval: "monthly"
-    day: "sunday"
-    time: "00:00"
-    timezone: "Europe/London"
-- package-ecosystem: "docker"
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+
+- package-ecosystem: docker
   directory: "/"
   schedule:
-    interval: "monthly"
-    day: "sunday"
-    time: "00:00"
-    timezone: "Europe/London"
+    interval: daily
   ignore:
     # Only send PRs for patch versions of Python.
     - dependency-name: "python"
-      update-types: [ "version-update:semver-major", "version-update:semver-minor" ]
+      update-types: ["version-update:semver-major", "version-update:semver-minor"]

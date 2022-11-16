@@ -1,5 +1,4 @@
+-r requirements.txt
 pip-tools
--r prod.txt
-factory-boy
+pip-sync-faster
 ipython
-supervisor
