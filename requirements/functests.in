@@ -1,6 +1,0 @@
-pip-tools
--r prod.txt
-httpretty
-pytest
-factory-boy
-h-matchers
