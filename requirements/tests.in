@@ -1,6 +1,8 @@
 pip-tools
-pip-sync-faster
+-r prod.txt
+coverage[toml]
 pytest
-coverage
+factory-boy
 h-matchers
--r requirements.txt
+httpretty
+freezegun
