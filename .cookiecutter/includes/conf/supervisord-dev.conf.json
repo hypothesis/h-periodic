@@ -1,0 +1,13 @@
+{
+  "programs": {
+    "h-beat": {
+      "command": "celery -b %(ENV_H_BROKER_URL)s -A h_periodic.h_beat beat --pidfile=h-celerybeat.pid --loglevel INFO"
+    },
+    "checkmate-beat": {
+      "command": "celery -b %(ENV_CHECKMATE_BROKER_URL)s -A h_periodic.checkmate_beat beat --pidfile=checkmate-celerybeat.pid --loglevel INFO"
+    },
+    "lms-beat": {
+      "command": "celery -b %(ENV_LMS_BROKER_URL)s -A h_periodic.lms_beat beat --pidfile=lms-celerybeat.pid --loglevel INFO"
+    }
+  }
+}
