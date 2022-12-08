@@ -104,7 +104,7 @@ $(call help,make docker,"make the app's docker image")
 docker:
 	@git archive --format=tar HEAD | docker build -t hypothesis/h-periodic:$(DOCKER_TAG) -
 
-.PHONY: run-docker
+.PHONY: docker-run
 $(call help,make docker-run,"run the app's docker image")
 docker-run:
 	@docker run \
