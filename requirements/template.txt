@@ -10,7 +10,7 @@ binaryornot==0.4.4
     # via cookiecutter
 build==0.9.0
     # via pip-tools
-certifi==2022.9.24
+certifi==2022.12.7
     # via requests
 chardet==5.0.0
     # via binaryornot
@@ -21,7 +21,7 @@ click==8.1.3
     #   cookiecutter
     #   pip-tools
 cookiecutter==2.1.1
-    # via -r requirements/template.in
+    # via -r template.in
 idna==3.4
     # via requests
 jinja2==3.1.2
@@ -37,7 +37,7 @@ packaging==21.3
 pep517==0.13.0
     # via build
 pip-tools==6.10.0
-    # via -r requirements/template.in
+    # via -r template.in
 pyparsing==3.0.9
     # via packaging
 python-dateutil==2.8.2
