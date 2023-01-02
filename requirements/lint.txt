@@ -157,7 +157,7 @@ pytz==2022.6
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   celery
-sentry-sdk==1.11.1
+sentry-sdk==1.12.1
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
