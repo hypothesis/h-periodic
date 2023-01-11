@@ -2,7 +2,12 @@
   "template": "https://github.com/hypothesis/cookiecutters",
   "checkout": null,
   "directory": "pyapp",
-  "ignore": ["h_periodic/__main__.py", "h_periodic/app.py", "h_periodic/core.py", "tests/unit/h_periodic/core_test.py"],
+  "ignore": [
+    "h_periodic/__main__.py",
+    "h_periodic/app.py",
+    "h_periodic/core.py",
+    "tests/unit/h_periodic/core_test.py"
+  ],
   "extra_context": {
     "name": "h-periodic",
     "package_name": "h_periodic",
@@ -26,6 +31,7 @@
     "_jinja2_env_vars": {
       "lstrip_blocks": true,
       "trim_blocks": true
-    }
+    },
+    "__copyright_year": "2022"
   }
 }
