@@ -1,4 +1,4 @@
-<a href="https://github.com/hypothesis/h-periodic/actions/workflows/ci.yml?query=branch%3Amain"><img src="https://img.shields.io/github/workflow/status/hypothesis/h-periodic/CI/main"></a>
+<a href="https://github.com/hypothesis/h-periodic/actions/workflows/ci.yml?query=branch%3Amain"><img src="https://img.shields.io/github/actions/workflow/status/hypothesis/h-periodic/ci.yml?branch=main"></a>
 <a><img src="https://img.shields.io/badge/python-3.8-success"></a>
 <a href="https://github.com/hypothesis/h-periodic/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-BSD--2--Clause-success"></a>
 <a href="https://github.com/hypothesis/cookiecutters/tree/main/pyapp"><img src="https://img.shields.io/badge/cookiecutter-pyapp-success"></a>
