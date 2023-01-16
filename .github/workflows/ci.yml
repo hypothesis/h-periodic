@@ -1,6 +1,14 @@
 name: CI
 on:
   push:
+    paths-ignore:
+      - '.cookiecutter/*'
+      - 'docs/*'
+      - 'requirements/*.in'
+      - 'requirements/dev.txt'
+      - '**/.gitignore'
+      - '*.md'
+      - 'LICENSE'
   workflow_dispatch:
   workflow_call:
 jobs:
