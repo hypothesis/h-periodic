@@ -133,7 +133,7 @@ prompt-toolkit==3.0.32
     #   click-repl
 pycodestyle==2.10.0
     # via -r requirements/lint.in
-pydocstyle==6.1.1
+pydocstyle==6.3.0
     # via -r requirements/lint.in
 pylint==2.15.10
     # via -r requirements/lint.in
