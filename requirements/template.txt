@@ -36,7 +36,7 @@ packaging==21.3
     # via build
 pep517==0.13.0
     # via build
-pip-tools==6.12.1
+pip-tools==6.12.2
     # via -r requirements/template.in
 pyparsing==3.0.9
     # via packaging
