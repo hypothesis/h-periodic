@@ -52,7 +52,7 @@ factory-boy==3.2.1
     # via -r requirements/dev.in
 faker==15.3.2
     # via factory-boy
-ipython==8.10.0
+ipython==8.11.0
     # via -r requirements/dev.in
 jedi==0.18.1
     # via ipython
