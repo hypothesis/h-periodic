@@ -4,6 +4,7 @@ from datetime import timedelta
 from os import environ
 
 from celery import Celery
+from celery.schedules import crontab
 from kombu import Exchange, Queue
 
 from h_periodic._util import asbool
@@ -31,6 +32,11 @@ celery.conf.update(
             "options": {"expires": 600},
             "task": "lms.tasks.rsa_key.rotate_keys",
             "schedule": timedelta(hours=1),
+        },
+        "send_instructor_email_digests": {
+            "task": "lms.tasks.email_digests.send_instructor_email_digest_tasks",
+            "schedule": crontab(hour=5, minute=15),
+            "kwargs": {"batch_size": 1000},
         },
     },
     task_serializer="json",
