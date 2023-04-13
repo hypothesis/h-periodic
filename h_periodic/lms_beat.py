@@ -36,7 +36,7 @@ celery.conf.update(
         "send_instructor_email_digests": {
             "task": "lms.tasks.email_digests.send_instructor_email_digest_tasks",
             "schedule": crontab(hour=5, minute=15),
-            "kwargs": {"batch_size": 1000},
+            "kwargs": {"batch_size": 50},
         },
     },
     task_serializer="json",
