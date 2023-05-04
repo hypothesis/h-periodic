@@ -28,6 +28,11 @@ celery.conf.update(
             "schedule": crontab(hour=5, minute=15),
             "kwargs": {"batch_size": 50},
         },
+        "delete_expired_task_done_rows": {
+            "task": "lms.tasks.task_done.delete_expired_rows",
+            "options": {"expires": 1800},
+            "schedule": timedelta(hours=1),
+        },
     },
     task_serializer="json",
 )
