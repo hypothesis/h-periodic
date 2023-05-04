@@ -34,5 +34,4 @@ celery.conf.update(
             "schedule": timedelta(hours=1),
         },
     },
-    task_serializer="json",
 )

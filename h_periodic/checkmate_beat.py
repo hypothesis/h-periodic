@@ -5,7 +5,6 @@ from os import environ
 
 from celery import Celery
 from celery.schedules import crontab
-from kombu import Exchange, Queue
 
 from h_periodic._util import asbool
 
@@ -16,15 +15,6 @@ if asbool(environ.get("DISABLE_CHECKMATE_BEAT")):  # pragma: nocover
 
 celery = Celery("checkmate")
 celery.conf.update(
-    task_queues=[
-        Queue(
-            "celery",
-            # We don't care if the messages are lost if the broker restarts
-            durable=False,
-            routing_key="celery",
-            exchange=Exchange("celery", type="direct", durable=False),
-        ),
-    ],
     beat_schedule_filename="checkmate-celerybeat-schedule",
     beat_schedule={
         "sync-blocklist": {
@@ -49,5 +39,4 @@ celery.conf.update(
             "schedule": crontab(minute="15,45"),
         },
     },
-    task_serializer="json",
 )
