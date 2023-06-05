@@ -67,7 +67,7 @@ sure:
 # requirements/%.txt filename, for example requirements/foo.txt -> foo.
 requirements/%.txt: requirements/%.in
 	@touch -a $(subst prod.txt,dev.txt,$@)
-	@tox -qe $(subst prod,dev,$(basename $(notdir $@))) --run-command 'pip --quiet --disable-pip-version-check install pip-tools'
+	@tox -qe $(subst prod,dev,$(basename $(notdir $@))) --run-command 'pip --quiet --disable-pip-version-check install pip-tools pip-sync-faster'
 	@tox -qe $(subst prod,dev,$(basename $(notdir $@))) --run-command 'pip-compile --allow-unsafe --quiet $(args) $<'
 
 # Inform make of the dependencies between our requirements files so that it
@@ -115,7 +115,7 @@ docker-run:
 .PHONY: clean
 $(call help,make clean,"delete temporary files etc")
 clean:
-	@rm -rf build dist .tox
+	@rm -rf build dist .tox .coverage coverage .eslintcache node_modules supervisord.log supervisord.pid yarn-error.log
 	@find . -path '*/__pycache__*' -delete
 	@find . -path '*.egg-info*' -delete
 
