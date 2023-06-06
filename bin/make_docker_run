@@ -1,0 +1,5 @@
+#!/bin/bash
+docker run \
+    --add-host host.docker.internal:host-gateway \
+    --env-file .docker.env \
+    hypothesis/h-periodic:dev
