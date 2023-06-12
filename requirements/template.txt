@@ -21,7 +21,7 @@ click==8.1.3
     #   cookiecutter
     #   pip-tools
 cookiecutter==2.1.1
-    # via -r requirements/template.in
+    # via -r template.in
 idna==3.4
     # via requests
 importlib-metadata==6.6.0
@@ -39,10 +39,10 @@ packaging==21.3
 pep517==0.13.0
     # via build
 pip-sync-faster==0.0.3
-    # via -r requirements/template.in
+    # via -r template.in
 pip-tools==6.13.0
     # via
-    #   -r requirements/template.in
+    #   -r template.in
     #   pip-sync-faster
 pyparsing==3.0.9
     # via packaging
@@ -52,7 +52,7 @@ python-slugify==6.1.2
     # via cookiecutter
 pyyaml==6.0
     # via cookiecutter
-requests==2.28.1
+requests==2.31.0
     # via cookiecutter
 six==1.16.0
     # via python-dateutil
