@@ -12,13 +12,18 @@ asttokens==2.1.0
     # via stack-data
 backcall==0.2.0
     # via ipython
-billiard==3.6.4.0
+backports-zoneinfo[tzdata]==0.2.1
+    # via
+    #   -r requirements/prod.txt
+    #   celery
+    #   kombu
+billiard==4.1.0
     # via
     #   -r requirements/prod.txt
     #   celery
 build==0.9.0
     # via pip-tools
-celery==5.2.7
+celery==5.3.0
     # via -r requirements/prod.txt
 certifi==2022.12.7
     # via
@@ -58,7 +63,7 @@ ipython==8.12.2
     # via -r requirements/dev.in
 jedi==0.18.1
     # via ipython
-kombu==5.2.4
+kombu==5.3.0
     # via
     #   -r requirements/prod.txt
     #   celery
@@ -94,11 +99,10 @@ pygments==2.13.0
 pyparsing==3.0.9
     # via packaging
 python-dateutil==2.8.2
-    # via faker
-pytz==2022.6
     # via
     #   -r requirements/prod.txt
     #   celery
+    #   faker
 sentry-sdk==1.25.1
     # via -r requirements/prod.txt
 six==1.16.0
@@ -121,8 +125,16 @@ traitlets==5.5.0
     # via
     #   ipython
     #   matplotlib-inline
-typing-extensions==4.5.0
-    # via ipython
+typing-extensions==4.6.3
+    # via
+    #   -r requirements/prod.txt
+    #   ipython
+    #   kombu
+tzdata==2023.3
+    # via
+    #   -r requirements/prod.txt
+    #   backports-zoneinfo
+    #   celery
 urllib3==1.26.12
     # via
     #   -r requirements/prod.txt
