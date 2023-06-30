@@ -154,7 +154,7 @@ pyparsing==3.0.9
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   packaging
-pytest==7.3.2
+pytest==7.4.0
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
