@@ -50,7 +50,9 @@ coverage[toml]==7.2.7
 exceptiongroup==1.0.4
     # via pytest
 factory-boy==3.2.1
-    # via -r requirements/tests.in
+    # via
+    #   -r requirements/tests.in
+    #   pytest-factoryboy
 faker==15.3.2
     # via factory-boy
 freezegun==1.2.2
@@ -61,6 +63,8 @@ httpretty==1.1.4
     # via -r requirements/tests.in
 importlib-metadata==6.6.0
     # via pip-sync-faster
+inflection==0.5.1
+    # via pytest-factoryboy
 iniconfig==1.1.1
     # via pytest
 kombu==5.3.1
@@ -88,6 +92,10 @@ prompt-toolkit==3.0.32
 pyparsing==3.0.9
     # via packaging
 pytest==7.4.0
+    # via
+    #   -r requirements/tests.in
+    #   pytest-factoryboy
+pytest-factoryboy==2.5.1
     # via -r requirements/tests.in
 python-dateutil==2.8.2
     # via
@@ -95,7 +103,7 @@ python-dateutil==2.8.2
     #   celery
     #   faker
     #   freezegun
-sentry-sdk==1.26.0
+sentry-sdk==1.29.0
     # via -r requirements/prod.txt
 six==1.16.0
     # via
@@ -114,6 +122,7 @@ typing-extensions==4.6.3
     # via
     #   -r requirements/prod.txt
     #   kombu
+    #   pytest-factoryboy
 tzdata==2023.3
     # via
     #   -r requirements/prod.txt
