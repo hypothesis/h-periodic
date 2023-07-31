@@ -73,6 +73,7 @@ factory-boy==3.2.1
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
+    #   pytest-factoryboy
 faker==15.3.2
     # via
     #   -r requirements/functests.txt
@@ -93,6 +94,11 @@ importlib-metadata==6.6.0
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   pip-sync-faster
+inflection==0.5.1
+    # via
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
+    #   pytest-factoryboy
 iniconfig==1.1.1
     # via
     #   -r requirements/functests.txt
@@ -125,7 +131,7 @@ pip-sync-faster==0.0.3
     #   -r requirements/functests.txt
     #   -r requirements/lint.in
     #   -r requirements/tests.txt
-pip-tools==6.13.0
+pip-tools==7.1.0
     # via
     #   -r requirements/functests.txt
     #   -r requirements/lint.in
@@ -155,6 +161,11 @@ pyparsing==3.0.9
     #   -r requirements/tests.txt
     #   packaging
 pytest==7.4.0
+    # via
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
+    #   pytest-factoryboy
+pytest-factoryboy==2.5.1
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
@@ -190,6 +201,7 @@ tomli==2.0.1
     #   build
     #   coverage
     #   pep517
+    #   pip-tools
     #   pylint
     #   pytest
 tomlkit==0.11.6
@@ -201,6 +213,7 @@ typing-extensions==4.6.3
     #   astroid
     #   kombu
     #   pylint
+    #   pytest-factoryboy
 tzdata==2023.3
     # via
     #   -r requirements/functests.txt
