@@ -47,7 +47,7 @@ click-repl==0.2.0
     #   celery
 exceptiongroup==1.0.4
     # via pytest
-factory-boy==3.2.1
+factory-boy==3.3.0
     # via
     #   -r requirements/functests.in
     #   pytest-factoryboy

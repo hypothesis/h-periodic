@@ -53,7 +53,7 @@ decorator==5.1.1
     # via ipython
 executing==1.2.0
     # via stack-data
-factory-boy==3.2.1
+factory-boy==3.3.0
     # via -r requirements/dev.in
 faker==15.3.2
     # via factory-boy

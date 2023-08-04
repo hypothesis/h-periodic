@@ -49,7 +49,7 @@ coverage[toml]==7.2.7
     # via -r requirements/tests.in
 exceptiongroup==1.0.4
     # via pytest
-factory-boy==3.2.1
+factory-boy==3.3.0
     # via
     #   -r requirements/tests.in
     #   pytest-factoryboy
