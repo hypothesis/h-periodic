@@ -13,7 +13,7 @@ backports-zoneinfo[tzdata]==0.2.1
 billiard==4.1.0
     # via celery
 celery==5.3.1
-    # via -r prod.in
+    # via -r requirements/prod.in
 certifi==2023.7.22
     # via sentry-sdk
 click==8.1.3
@@ -34,14 +34,14 @@ prompt-toolkit==3.0.32
     # via click-repl
 python-dateutil==2.8.2
     # via celery
-sentry-sdk==1.29.2
-    # via -r prod.in
+sentry-sdk==1.30.0
+    # via -r requirements/prod.in
 six==1.16.0
     # via
     #   click-repl
     #   python-dateutil
 supervisor==4.2.5
-    # via -r prod.in
+    # via -r requirements/prod.in
 typing-extensions==4.6.3
     # via kombu
 tzdata==2023.3
