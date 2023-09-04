@@ -5,6 +5,7 @@ from datetime import timedelta
 from os import environ
 
 from celery import Celery
+from celery.schedules import crontab
 
 from h_periodic._util import asbool
 
@@ -50,6 +51,12 @@ celery.conf.update(
             "task": "h.tasks.indexer.sync_annotations",
             "schedule": timedelta(minutes=1),
             "kwargs": {"limit": 400},
+        },
+        "fill-annotations-pk": {
+            "options": {"expires": 30},
+            "task": "h.tasks.annotations.fill_pk_and_user_id",
+            "schedule": crontab(hour="*,9-14", minute=50),
+            "kwargs": {"batch_size": 1000},
         },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
