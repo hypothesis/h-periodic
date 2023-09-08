@@ -87,7 +87,7 @@ prompt-toolkit==3.0.32
     #   click-repl
 pyparsing==3.0.9
     # via packaging
-pytest==7.4.0
+pytest==7.4.2
     # via
     #   -r requirements/functests.in
     #   pytest-factoryboy
