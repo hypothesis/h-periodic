@@ -56,7 +56,7 @@ celery.conf.update(
             "options": {"expires": 30},
             "task": "h.tasks.annotations.fill_pk_and_user_id",
             "schedule": crontab(hour="4-12", minute="*/5"),
-            "kwargs": {"batch_size": 5000},
+            "kwargs": {"batch_size": 1000},
         },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
