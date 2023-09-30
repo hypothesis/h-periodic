@@ -59,7 +59,7 @@ faker==15.3.2
     # via factory-boy
 importlib-metadata==6.6.0
     # via pip-sync-faster
-ipython==8.12.2
+ipython==8.12.3
     # via -r requirements/dev.in
 jedi==0.18.1
     # via ipython
