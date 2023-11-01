@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe requirements/format.in
 #
-black==23.9.1
+black==23.10.1
     # via -r requirements/format.in
 build==0.9.0
     # via pip-tools
