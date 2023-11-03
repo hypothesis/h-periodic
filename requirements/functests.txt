@@ -6,29 +6,29 @@
 #
 amqp==5.1.1
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   kombu
 backports-zoneinfo[tzdata]==0.2.1
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   backports-zoneinfo
     #   celery
     #   kombu
 billiard==4.1.0
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   celery
 build==0.9.0
     # via pip-tools
 celery==5.3.4
-    # via -r prod.txt
+    # via -r requirements/prod.txt
 certifi==2023.7.22
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   sentry-sdk
 click==8.1.3
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   celery
     #   click-didyoumean
     #   click-plugins
@@ -36,28 +36,28 @@ click==8.1.3
     #   pip-tools
 click-didyoumean==0.3.0
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   celery
 click-plugins==1.1.1
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   celery
 click-repl==0.2.0
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   celery
 exceptiongroup==1.0.4
     # via pytest
 factory-boy==3.3.0
     # via
-    #   -r functests.in
+    #   -r requirements/functests.in
     #   pytest-factoryboy
 faker==15.3.2
     # via factory-boy
 h-matchers==1.2.15
-    # via -r functests.in
+    # via -r requirements/functests.in
 httpretty==1.1.4
-    # via -r functests.in
+    # via -r requirements/functests.in
 importlib-metadata==6.6.0
     # via pip-sync-faster
 inflection==0.5.1
@@ -66,7 +66,7 @@ iniconfig==1.1.1
     # via pytest
 kombu==5.3.2
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   celery
 packaging==21.3
     # via
@@ -75,39 +75,39 @@ packaging==21.3
 pep517==0.13.0
     # via build
 pip-sync-faster==0.0.3
-    # via -r functests.in
+    # via -r requirements/functests.in
 pip-tools==7.3.0
     # via
-    #   -r functests.in
+    #   -r requirements/functests.in
     #   pip-sync-faster
 pluggy==1.0.0
     # via pytest
 prompt-toolkit==3.0.32
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   click-repl
 pyparsing==3.0.9
     # via packaging
 pytest==7.4.2
     # via
-    #   -r functests.in
+    #   -r requirements/functests.in
     #   pytest-factoryboy
-pytest-factoryboy==2.5.1
-    # via -r functests.in
+pytest-factoryboy==2.6.0
+    # via -r requirements/functests.in
 python-dateutil==2.8.2
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   celery
     #   faker
 sentry-sdk==1.33.1
-    # via -r prod.txt
+    # via -r requirements/prod.txt
 six==1.16.0
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   click-repl
     #   python-dateutil
 supervisor==4.2.5
-    # via -r prod.txt
+    # via -r requirements/prod.txt
 tomli==2.0.1
     # via
     #   build
@@ -116,27 +116,27 @@ tomli==2.0.1
     #   pytest
 typing-extensions==4.6.3
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   kombu
     #   pytest-factoryboy
 tzdata==2023.3
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   backports-zoneinfo
     #   celery
 urllib3==1.26.18
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   sentry-sdk
 vine==5.0.0
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   amqp
     #   celery
     #   kombu
 wcwidth==0.2.5
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   prompt-toolkit
 wheel==0.38.4
     # via pip-tools
@@ -148,6 +148,6 @@ pip==23.3
     # via pip-tools
 setuptools==65.5.1
     # via
-    #   -r prod.txt
+    #   -r requirements/prod.txt
     #   pip-tools
     #   supervisor
