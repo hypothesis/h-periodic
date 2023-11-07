@@ -55,13 +55,13 @@ celery.conf.update(
         "fill-annotation-slim-first-batch": {
             "options": {"expires": 30},
             "task": "h.tasks.annotations.fill_annotation_slim",
-            "schedule": crontab(hour="8", minute="*/3"),
-            "kwargs": {"batch_size": 500},
+            "schedule": crontab(hour="7", minute="*/3"),
+            "kwargs": {"batch_size": 250},
         },
         "fill-annotation-slim": {
             "options": {"expires": 30},
             "task": "h.tasks.annotations.fill_annotation_slim",
-            "schedule": crontab(hour="9-13", minute="*/3"),
+            "schedule": crontab(hour="8-14", minute="*/3"),
             "kwargs": {"batch_size": 1500},
         },
         "report-sync-annotations-queue-length": {
