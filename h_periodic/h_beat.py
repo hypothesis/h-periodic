@@ -17,6 +17,9 @@ if asbool(environ.get("DISABLE_H_BEAT")):  # pragma: nocover
     print("h_beat disabled by DISABLE_H_BEAT environment variable")
     sys.exit()
 
+SLIM_TASK_SINCE = "2016-01-01"
+SLIM_TASK_UNTIL = "2018-03-31"
+
 celery = Celery("h")
 celery.conf.update(
     beat_schedule_filename="h-celerybeat-schedule",
@@ -55,14 +58,22 @@ celery.conf.update(
         "fill-annotation-slim-first-batch": {
             "options": {"expires": 30},
             "task": "h.tasks.annotations.fill_annotation_slim",
-            "schedule": crontab(hour="7", minute="*/3"),
-            "kwargs": {"batch_size": 250},
+            "schedule": crontab(hour="7", minute="*/2"),
+            "kwargs": {
+                "batch_size": 250,
+                "since": SLIM_TASK_SINCE,
+                "until": SLIM_TASK_UNTIL,
+            },
         },
         "fill-annotation-slim": {
             "options": {"expires": 30},
             "task": "h.tasks.annotations.fill_annotation_slim",
             "schedule": crontab(hour="8-15", minute="*/2"),
-            "kwargs": {"batch_size": 3000},
+            "kwargs": {
+                "batch_size": 3000,
+                "since": SLIM_TASK_SINCE,
+                "until": SLIM_TASK_UNTIL,
+            },
         },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
