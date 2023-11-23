@@ -17,8 +17,8 @@ if asbool(environ.get("DISABLE_H_BEAT")):  # pragma: nocover
     print("h_beat disabled by DISABLE_H_BEAT environment variable")
     sys.exit()
 
-SLIM_TASK_SINCE = "2018-01-01"
-SLIM_TASK_UNTIL = "2019-12-31"
+SLIM_TASK_SINCE = "2018-04-01"
+SLIM_TASK_UNTIL = "2020-03-30"
 
 celery = Celery("h")
 celery.conf.update(
