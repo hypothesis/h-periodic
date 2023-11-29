@@ -5,7 +5,6 @@ from datetime import timedelta
 from os import environ
 
 from celery import Celery
-from celery.schedules import crontab
 
 from h_periodic._util import asbool
 
@@ -16,9 +15,6 @@ from h_periodic._util import asbool
 if asbool(environ.get("DISABLE_H_BEAT")):  # pragma: nocover
     print("h_beat disabled by DISABLE_H_BEAT environment variable")
     sys.exit()
-
-SLIM_TASK_SINCE = "2018-04-01"
-SLIM_TASK_UNTIL = "2020-03-30"
 
 celery = Celery("h")
 celery.conf.update(
@@ -54,26 +50,6 @@ celery.conf.update(
             "task": "h.tasks.indexer.sync_annotations",
             "schedule": timedelta(minutes=1),
             "kwargs": {"limit": 400},
-        },
-        "fill-annotation-slim-first-batch": {
-            "options": {"expires": 30},
-            "task": "h.tasks.annotations.fill_annotation_slim",
-            "schedule": crontab(hour="7", minute="*/2"),
-            "kwargs": {
-                "batch_size": 250,
-                "since": SLIM_TASK_SINCE,
-                "until": SLIM_TASK_UNTIL,
-            },
-        },
-        "fill-annotation-slim": {
-            "options": {"expires": 30},
-            "task": "h.tasks.annotations.fill_annotation_slim",
-            "schedule": crontab(hour="8-15", minute="*/2"),
-            "kwargs": {
-                "batch_size": 3000,
-                "since": SLIM_TASK_SINCE,
-                "until": SLIM_TASK_UNTIL,
-            },
         },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
