@@ -83,7 +83,7 @@ faker==15.3.2
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   factory-boy
-freezegun==1.2.2
+freezegun==1.4.0
     # via -r requirements/tests.txt
 h-matchers==1.2.15
     # via
