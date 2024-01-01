@@ -155,7 +155,7 @@ pycodestyle==2.11.1
     # via -r requirements/lint.in
 pydocstyle==6.3.0
     # via -r requirements/lint.in
-pylint==3.0.2
+pylint==3.0.3
     # via -r requirements/lint.in
 pyparsing==3.0.9
     # via
