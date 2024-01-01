@@ -20,8 +20,8 @@ click==8.1.3
     # via
     #   cookiecutter
     #   pip-tools
-cookiecutter==2.4.0
-    # via -r template.in
+cookiecutter==2.5.0
+    # via -r requirements/template.in
 idna==3.4
     # via requests
 importlib-metadata==6.6.0
@@ -39,10 +39,10 @@ packaging==21.3
 pep517==0.13.0
     # via build
 pip-sync-faster==0.0.3
-    # via -r template.in
+    # via -r requirements/template.in
 pip-tools==7.3.0
     # via
-    #   -r template.in
+    #   -r requirements/template.in
     #   pip-sync-faster
 pygments==2.16.1
     # via rich
