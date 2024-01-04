@@ -45,6 +45,19 @@ jobs:
       elasticbeanstalk_environment: qa
       docker_tag: ${{ needs.Docker_Hub.outputs.docker_tag }}
     secrets: inherit
+  staging:
+    name: Staging
+    needs: [docker_hub]
+    uses: hypothesis/workflows/.github/workflows/deploy.yml@main
+    with:
+      operation: deploy
+      github_environment_name: Staging
+      github_environment_url: https://my.papertrailapp.com/groups/38981358/events
+      aws_region: us-west-1
+      elasticbeanstalk_application: h-periodic
+      elasticbeanstalk_environment: staging
+      docker_tag: ${{ needs.Docker_Hub.outputs.docker_tag }}
+    secrets: inherit
   production:
     name: Production
     needs: [docker_hub, qa]
