@@ -13,7 +13,7 @@
     "package_name": "h_periodic",
     "slug": "h-periodic",
     "short_description": "Celery beat processes for Hypothesis apps.",
-    "python_version": "3.8.12",
+    "python_version": "3.11.7",
     "github_owner": "hypothesis",
     "visibility": "public",
     "copyright_holder": "Hypothesis",
