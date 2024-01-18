@@ -51,6 +51,12 @@ celery.conf.update(
             "schedule": timedelta(minutes=1),
             "kwargs": {"limit": 400},
         },
+        "sync-slim-annotations": {
+            "options": {"expires": 30},
+            "task": "h.tasks.annotations.sync_annotation_slim",
+            "schedule": timedelta(minutes=5),
+            "kwargs": {"limit": 500},
+        },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
             "task": "h.tasks.indexer.report_job_queue_metrics",
