@@ -6,3 +6,4 @@ pytest
 factory-boy
 pytest-factoryboy
 h-matchers
+h-testkit
