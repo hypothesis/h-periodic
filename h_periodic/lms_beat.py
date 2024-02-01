@@ -1,4 +1,5 @@
 """Celery beat scheduler process configuration."""
+
 import sys
 from datetime import timedelta
 from os import environ
