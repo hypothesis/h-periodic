@@ -48,6 +48,8 @@ faker==22.0.0
     # via factory-boy
 h-matchers==1.2.15
     # via -r requirements/functests.in
+h-testkit==1.0.1
+    # via -r requirements/functests.in
 httpretty==1.1.4
     # via -r requirements/functests.in
 importlib-metadata==7.0.1
@@ -78,7 +80,7 @@ prompt-toolkit==3.0.43
     #   click-repl
 pyproject-hooks==1.0.0
     # via build
-pytest==7.4.4
+pytest==8.0.0
     # via
     #   -r requirements/functests.in
     #   pytest-factoryboy
