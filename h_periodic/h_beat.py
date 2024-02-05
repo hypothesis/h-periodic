@@ -54,8 +54,8 @@ celery.conf.update(
         "sync-slim-annotations": {
             "options": {"expires": 30},
             "task": "h.tasks.annotations.sync_annotation_slim",
-            "schedule": timedelta(minutes=2),
-            "kwargs": {"limit": 500},
+            "schedule": timedelta(minutes=1),
+            "kwargs": {"limit": 1000},
         },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
