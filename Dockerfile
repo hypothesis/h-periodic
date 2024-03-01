@@ -1,4 +1,4 @@
-FROM python:3.11.7-alpine3.19
+FROM python:3.11.8-alpine3.19
 MAINTAINER Hypothes.is Project and contributors
 
 # Create the h-periodic user, group, home directory and package directory.
