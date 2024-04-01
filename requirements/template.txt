@@ -38,14 +38,16 @@ packaging==23.2
     # via build
 pip-sync-faster==0.0.3
     # via -r requirements/template.in
-pip-tools==7.3.0
+pip-tools==7.4.1
     # via
     #   -r requirements/template.in
     #   pip-sync-faster
 pygments==2.17.2
     # via rich
 pyproject-hooks==1.0.0
-    # via build
+    # via
+    #   build
+    #   pip-tools
 python-dateutil==2.8.2
     # via arrow
 python-slugify==8.0.1
