@@ -68,7 +68,7 @@ packaging==23.2
     #   pytest
 pip-sync-faster==0.0.3
     # via -r requirements/functests.in
-pip-tools==7.3.0
+pip-tools==7.4.1
     # via
     #   -r requirements/functests.in
     #   pip-sync-faster
@@ -79,7 +79,9 @@ prompt-toolkit==3.0.43
     #   -r requirements/prod.txt
     #   click-repl
 pyproject-hooks==1.0.0
-    # via build
+    # via
+    #   build
+    #   pip-tools
 pytest==8.0.0
     # via
     #   -r requirements/functests.in
