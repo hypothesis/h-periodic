@@ -52,7 +52,7 @@ faker==22.0.0
     # via factory-boy
 importlib-metadata==7.0.1
     # via pip-sync-faster
-ipython==8.22.1
+ipython==8.23.0
     # via -r requirements/dev.in
 jedi==0.19.1
     # via ipython
@@ -109,6 +109,8 @@ traitlets==5.14.1
     # via
     #   ipython
     #   matplotlib-inline
+typing-extensions==4.10.0
+    # via ipython
 tzdata==2023.4
     # via
     #   -r requirements/prod.txt
