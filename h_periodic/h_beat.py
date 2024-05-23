@@ -45,6 +45,11 @@ celery.conf.update(
             "task": "h.tasks.cleanup.purge_removed_features",
             "schedule": timedelta(hours=6),
         },
+        "purge-deleted-users": {
+            "options": {"expires": 1800},
+            "task": "h.tasks.cleanup.purge_deleted_users",
+            "schedule": timedelta(hours=1),
+        },
         "sync-annotations": {
             "options": {"expires": 30},
             "task": "h.tasks.indexer.sync_annotations",
