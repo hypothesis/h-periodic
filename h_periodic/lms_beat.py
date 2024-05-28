@@ -28,6 +28,10 @@ celery.conf.update(
             "task": "lms.tasks.email_digests.send_instructor_email_digest_tasks",
             "schedule": crontab(hour=7, minute=15),
         },
+        "refresh_hubspot_data": {
+            "task": "lms.tasks.hubspot.refresh_hubspot_data",
+            "schedule": crontab(hour=13),
+        },
         "delete_expired_task_done_rows": {
             "task": "lms.tasks.task_done.delete_expired_rows",
             "options": {"expires": 1800},
