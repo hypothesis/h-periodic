@@ -23,7 +23,7 @@ celery.conf.update(
         "purge-deleted-annotations": {
             "options": {"expires": 1800},
             "task": "h.tasks.cleanup.purge_deleted_annotations",
-            "schedule": timedelta(hours=1),
+            "schedule": timedelta(minutes=5),
         },
         "report-num-deleted-annotations": {
             "options": {"expires": 30},
@@ -53,7 +53,7 @@ celery.conf.update(
         "purge-deleted-users": {
             "options": {"expires": 1800},
             "task": "h.tasks.cleanup.purge_deleted_users",
-            "schedule": timedelta(hours=1),
+            "schedule": timedelta(minutes=5),
         },
         "sync-annotations": {
             "options": {"expires": 30},
