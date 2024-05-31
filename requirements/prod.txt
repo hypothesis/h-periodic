@@ -8,7 +8,7 @@ amqp==5.2.0
     # via kombu
 billiard==4.2.0
     # via celery
-celery==5.3.6
+celery==5.4.0
     # via -r requirements/prod.in
 certifi==2023.11.17
     # via sentry-sdk
