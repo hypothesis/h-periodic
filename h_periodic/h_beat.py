@@ -25,6 +25,11 @@ celery.conf.update(
             "task": "h.tasks.cleanup.purge_deleted_annotations",
             "schedule": timedelta(minutes=5),
         },
+        "report-num-deleted-annotations": {
+            "options": {"expires": 30},
+            "task": "h.tasks.cleanup.report_num_deleted_annotations",
+            "schedule": timedelta(minutes=1),
+        },
         "purge-expired-authtickets": {
             "options": {"expires": 1800},
             "task": "h.tasks.cleanup.purge_expired_auth_tickets",
