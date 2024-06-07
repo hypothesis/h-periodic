@@ -142,6 +142,7 @@ warn_unused_ignores = true
 disable_error_code = [
     # https://mypy.readthedocs.io/en/stable/error_code_list.html#code-import-untyped
     "import-untyped",
+    "import-not-found",
 ]
 
 [[tool.mypy.overrides]]
