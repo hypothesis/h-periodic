@@ -32,6 +32,11 @@ celery.conf.update(
             "task": "lms.tasks.hubspot.refresh_hubspot_data",
             "schedule": crontab(hour=13),
         },
+        "schedule_monthly_deal_report": {
+            "task": "lms.tasks.organization.schedule_monthly_deal_report",
+            "schedule": timedelta(hours=1),
+            "kwargs": {"limit": 1, "backfill": 24},
+        },
         "delete_expired_task_done_rows": {
             "task": "lms.tasks.task_done.delete_expired_rows",
             "options": {"expires": 1800},
