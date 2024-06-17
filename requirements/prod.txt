@@ -9,7 +9,7 @@ amqp==5.2.0
 billiard==4.2.0
     # via celery
 celery==5.4.0
-    # via -r requirements/prod.in
+    # via -r prod.in
 certifi==2023.11.17
     # via sentry-sdk
 click==8.1.7
@@ -31,14 +31,14 @@ prompt-toolkit==3.0.43
 python-dateutil==2.8.2
     # via celery
 sentry-sdk==2.0.1
-    # via -r requirements/prod.in
+    # via -r prod.in
 six==1.16.0
     # via python-dateutil
 supervisor==4.2.5
-    # via -r requirements/prod.in
+    # via -r prod.in
 tzdata==2023.4
     # via celery
-urllib3==2.1.0
+urllib3==2.2.2
     # via sentry-sdk
 vine==5.1.0
     # via
