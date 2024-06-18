@@ -35,7 +35,7 @@ celery.conf.update(
         "schedule_monthly_deal_report": {
             "task": "lms.tasks.organization.schedule_monthly_deal_report",
             "schedule": timedelta(minutes=15),
-            "kwargs": {"limit": 2, "backfill": 2},
+            "kwargs": {"limit": 2, "backfill": 20},
         },
         "delete_expired_task_done_rows": {
             "task": "lms.tasks.task_done.delete_expired_rows",
