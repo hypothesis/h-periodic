@@ -10,7 +10,7 @@ billiard==4.2.0
     # via celery
 celery==5.4.0
     # via -r prod.in
-certifi==2023.11.17
+certifi==2024.7.4
     # via sentry-sdk
 click==8.1.7
     # via
