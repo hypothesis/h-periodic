@@ -133,7 +133,7 @@ wcwidth==0.2.13
     #   prompt-toolkit
 wheel==0.42.0
     # via pip-tools
-zipp==3.17.0
+zipp==3.19.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
