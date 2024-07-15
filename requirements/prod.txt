@@ -49,5 +49,5 @@ wcwidth==0.2.13
     # via prompt-toolkit
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==69.0.3
+setuptools==70.0.0
     # via supervisor
