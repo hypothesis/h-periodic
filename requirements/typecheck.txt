@@ -70,7 +70,7 @@ python-dateutil==2.8.2
     # via
     #   -r prod.txt
     #   celery
-sentry-sdk==2.0.1
+sentry-sdk==2.8.0
     # via -r prod.txt
 six==1.16.0
     # via

@@ -94,7 +94,7 @@ python-dateutil==2.8.2
     #   -r prod.txt
     #   celery
     #   faker
-sentry-sdk==2.0.1
+sentry-sdk==2.8.0
     # via -r prod.txt
 six==1.16.0
     # via
