@@ -32,6 +32,10 @@ celery.conf.update(
             "task": "lms.tasks.hubspot.refresh_hubspot_data",
             "schedule": crontab(hour=13),
         },
+        "export_companies_contract_billables": {
+            "task": "lms.tasks.hubspot.export_companies_contract_billables",
+            "schedule": crontab(hour=14),
+        },
         "schedule_monthly_deal_report": {
             "task": "lms.tasks.organization.schedule_monthly_deal_report",
             "schedule": timedelta(minutes=15),
