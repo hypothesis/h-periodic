@@ -46,7 +46,7 @@ kombu==5.3.4
     # via
     #   -r requirements/prod.txt
     #   celery
-mypy==1.11.1
+mypy==1.11.2
     # via -r requirements/typecheck.in
 mypy-extensions==1.0.0
     # via mypy
