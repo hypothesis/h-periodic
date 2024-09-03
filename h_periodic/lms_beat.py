@@ -43,7 +43,7 @@ celery.conf.update(
         },
         "schedule_fetching_rosters": {
             "task": "lms.tasks.roster.schedule_fetching_rosters",
-            "schedule": crontab(hour=14, minute=5),
+            "schedule": timedelta(hours=1),
         },
         "delete_expired_task_done_rows": {
             "task": "lms.tasks.task_done.delete_expired_rows",
