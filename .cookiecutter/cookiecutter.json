@@ -27,7 +27,6 @@
     "__docker_namespace": "hypothesis",
     "__docker_network": "h_periodic_default",
     "__github_url": "https://github.com/hypothesis/h-periodic",
-    "__hdev_project_type": "application",
     "_jinja2_env_vars": {
       "lstrip_blocks": true,
       "trim_blocks": true
