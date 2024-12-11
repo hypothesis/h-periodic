@@ -50,5 +50,9 @@ celery.conf.update(
             "options": {"expires": 1800},
             "schedule": timedelta(hours=1),
         },
+        "purge_old_launch_data": {
+            "task": "lms.tasks.event.purge_launch_data",
+            "schedule": timedelta(hours=1),
+        },
     },
 )
