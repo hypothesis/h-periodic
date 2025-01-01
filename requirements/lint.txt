@@ -9,7 +9,7 @@ amqp==5.2.0
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   kombu
-astroid==3.3.4
+astroid==3.3.8
     # via pylint
 billiard==4.2.0
     # via
@@ -142,7 +142,7 @@ pycodestyle==2.12.1
     # via -r requirements/lint.in
 pydocstyle==6.3.0
     # via -r requirements/lint.in
-pylint==3.3.1
+pylint==3.3.3
     # via -r requirements/lint.in
 pyproject-hooks==1.0.0
     # via
