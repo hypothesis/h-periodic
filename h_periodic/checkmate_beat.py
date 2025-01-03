@@ -1,7 +1,6 @@
 """Celery beat scheduler process configuration."""
 
 import sys
-from datetime import timedelta
 from os import environ
 
 from celery import Celery
@@ -18,11 +17,6 @@ celery = Celery("checkmate")
 celery.conf.update(
     beat_schedule_filename="checkmate-celerybeat-schedule",
     beat_schedule={
-        "sync-blocklist": {
-            "options": {"expires": 30},
-            "task": "checkmate.celery_async.tasks.sync_blocklist",
-            "schedule": timedelta(minutes=1),
-        },
         # Timings are listed here: https://urlhaus.abuse.ch/api/#retrieve
         # The full list is requested to be fetch less than every 5 minutes, but
         # this is massive overkill as we also use the second update list, which
