@@ -52,7 +52,7 @@ mypy-extensions==1.0.0
     # via mypy
 packaging==24.1
     # via build
-pip-sync-faster==0.0.4
+pip-sync-faster==0.0.5
     # via -r requirements/typecheck.in
 pip-tools==7.4.1
     # via

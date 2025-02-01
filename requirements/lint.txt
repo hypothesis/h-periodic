@@ -115,7 +115,7 @@ packaging==23.2
     #   build
     #   pytest
     #   pytest-factoryboy
-pip-sync-faster==0.0.4
+pip-sync-faster==0.0.5
     # via
     #   -r requirements/functests.txt
     #   -r requirements/lint.in
