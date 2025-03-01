@@ -99,7 +99,7 @@ iniconfig==2.0.0
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   pytest
-isort==5.13.2
+isort==6.0.1
     # via pylint
 kombu==5.3.4
     # via
