@@ -12,5 +12,6 @@ supervisord.pid
 .devdata*
 .eslintcache
 *.tsbuildinfo
+.vscode
 *-celerybeat-schedule.*
 *-celerybeat.pid
