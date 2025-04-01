@@ -142,7 +142,7 @@ pycodestyle==2.13.0
     # via -r requirements/lint.in
 pydocstyle==6.3.0
     # via -r requirements/lint.in
-pylint==3.3.4
+pylint==3.3.6
     # via -r requirements/lint.in
 pyproject-hooks==1.0.0
     # via
