@@ -67,6 +67,11 @@ celery.conf.update(
             "schedule": timedelta(minutes=1),
             "kwargs": {"limit": 1000},
         },
+        "delete_expired_task_done_rows": {
+            "task": "h.tasks.task_done.delete_expired_rows",
+            "options": {"expires": 1800},
+            "schedule": timedelta(hours=1),
+        },
         "report-sync-annotations-queue-length": {
             "options": {"expires": 30},
             "task": "h.tasks.indexer.report_job_queue_metrics",
