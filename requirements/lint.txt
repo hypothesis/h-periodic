@@ -169,7 +169,7 @@ python-dateutil==2.8.2
     #   celery
     #   faker
     #   freezegun
-sentry-sdk==2.25.0
+sentry-sdk==2.27.0
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
