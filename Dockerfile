@@ -7,7 +7,7 @@ WORKDIR /var/lib/h-periodic
 
 COPY requirements/prod.txt ./
 
-RUN apk add build-base linux-headers
+RUN apk add build-base linux-headers git
 
 RUN pip install --no-cache-dir -r prod.txt
 
