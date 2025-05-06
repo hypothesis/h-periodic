@@ -45,6 +45,7 @@ source = ["h_periodic", "tests/unit"]
 omit = [
     "*/h_periodic/__main__.py",
     "*/h_periodic/app.py",
+    "*/h_periodic/_version.py",
 ]
 
 [tool.coverage.paths]
