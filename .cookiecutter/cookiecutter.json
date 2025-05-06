@@ -4,6 +4,7 @@
   "directory": "pyapp",
   "ignore": [
     "h_periodic/__main__.py",
+    "h_periodic/_version.py",
     "h_periodic/app.py",
     "h_periodic/core.py",
     "tests/unit/h_periodic/core_test.py"
