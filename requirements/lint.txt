@@ -6,34 +6,34 @@
 #
 amqp==5.2.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   kombu
 astroid==3.3.8
     # via pylint
 billiard==4.2.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
 build==1.0.3
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pip-tools
 celery==5.4.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
 certifi==2024.7.4
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   sentry-sdk
 click==8.1.7
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
     #   click-didyoumean
     #   click-plugins
@@ -41,200 +41,200 @@ click==8.1.7
     #   pip-tools
 click-didyoumean==0.3.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
 click-plugins==1.1.1
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
 click-repl==0.3.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
 coverage[toml]==7.6.8
     # via
-    #   -r tests.txt
+    #   -r requirements/tests.txt
     #   pytest-cov
 dill==0.3.7
     # via pylint
 factory-boy==3.3.3
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pytest-factoryboy
 faker==22.0.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   factory-boy
 freezegun==1.5.1
-    # via -r tests.txt
+    # via -r requirements/tests.txt
 h-matchers==1.2.17
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
 h-testkit==1.0.1
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
 httpretty==1.1.4
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
 importlib-metadata==7.0.1
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pip-sync-faster
 inflection==0.5.1
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pytest-factoryboy
 iniconfig==2.0.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pytest
 isort==6.0.1
     # via pylint
 kombu==5.3.4
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
 mccabe==0.7.0
     # via pylint
 packaging==23.2
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   build
     #   pytest
     #   pytest-factoryboy
 pip-sync-faster==0.0.5
     # via
-    #   -r functests.txt
-    #   -r lint.in
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/lint.in
+    #   -r requirements/tests.txt
 pip-tools==7.4.1
     # via
-    #   -r functests.txt
-    #   -r lint.in
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/lint.in
+    #   -r requirements/tests.txt
     #   pip-sync-faster
 platformdirs==4.1.0
     # via pylint
 pluggy==1.5.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pytest
 prompt-toolkit==3.0.43
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   click-repl
 pycodestyle==2.13.0
-    # via -r lint.in
+    # via -r requirements/lint.in
 pydocstyle==6.3.0
-    # via -r lint.in
-pylint==3.3.6
-    # via -r lint.in
+    # via -r requirements/lint.in
+pylint==3.3.7
+    # via -r requirements/lint.in
 pyproject-hooks==1.0.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   build
     #   pip-tools
 pytest==8.3.5
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pytest-cov
     #   pytest-factoryboy
 pytest-cov==6.1.1
-    # via -r tests.txt
+    # via -r requirements/tests.txt
 pytest-factoryboy==2.7.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
 python-dateutil==2.8.2
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
     #   faker
     #   freezegun
 sentry-sdk==2.27.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
 six==1.16.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   python-dateutil
 snowballstemmer==2.2.0
     # via pydocstyle
 supervisor==4.2.5
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
 toml==0.10.2
-    # via -r lint.in
+    # via -r requirements/lint.in
 tomlkit==0.12.3
     # via pylint
 typing-extensions==4.9.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pytest-factoryboy
 tzdata==2023.4
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   celery
 urllib3==2.2.2
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   sentry-sdk
 vine==5.1.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   amqp
     #   celery
     #   kombu
 wcwidth==0.2.13
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   prompt-toolkit
 wheel==0.42.0
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pip-tools
 zipp==3.19.1
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.3.2
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pip-tools
 setuptools==78.1.1
     # via
-    #   -r functests.txt
-    #   -r tests.txt
+    #   -r requirements/functests.txt
+    #   -r requirements/tests.txt
     #   pip-tools
     #   supervisor
