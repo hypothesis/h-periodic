@@ -38,7 +38,7 @@ supervisor==4.2.5
     # via -r prod.in
 tzdata==2023.4
     # via celery
-urllib3==2.2.2
+urllib3==2.5.0
     # via sentry-sdk
 vine==5.1.0
     # via
