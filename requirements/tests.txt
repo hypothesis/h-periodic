@@ -78,7 +78,9 @@ pip-tools==7.4.1
     #   -r requirements/tests.in
     #   pip-sync-faster
 pluggy==1.5.0
-    # via pytest
+    # via
+    #   pytest
+    #   pytest-cov
 prompt-toolkit==3.0.43
     # via
     #   -r requirements/prod.txt
@@ -94,7 +96,7 @@ pytest==8.4.1
     #   -r requirements/tests.in
     #   pytest-cov
     #   pytest-factoryboy
-pytest-cov==6.1.1
+pytest-cov==6.2.1
     # via -r requirements/tests.in
 pytest-factoryboy==2.7.0
     # via -r requirements/tests.in
