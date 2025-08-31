@@ -11,7 +11,7 @@ amqp==5.2.0
     #   kombu
 astroid==3.3.8
     # via pylint
-billiard==4.2.0
+billiard==4.2.1
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
@@ -21,7 +21,7 @@ build==1.0.3
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   pip-tools
-celery==5.4.0
+celery==5.5.3
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
@@ -101,18 +101,19 @@ iniconfig==2.0.0
     #   pytest
 isort==6.0.1
     # via pylint
-kombu==5.3.4
+kombu==5.5.4
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   celery
 mccabe==0.7.0
     # via pylint
-packaging==23.2
+packaging==25.0
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   build
+    #   kombu
     #   pytest
     #   pytest-factoryboy
 pip-sync-faster==0.0.5
@@ -199,11 +200,11 @@ typing-extensions==4.9.0
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   pytest-factoryboy
-tzdata==2023.4
+tzdata==2025.2
     # via
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
-    #   celery
+    #   kombu
 urllib3==2.5.0
     # via
     #   -r requirements/functests.txt

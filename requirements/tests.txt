@@ -8,13 +8,13 @@ amqp==5.2.0
     # via
     #   -r requirements/prod.txt
     #   kombu
-billiard==4.2.0
+billiard==4.2.1
     # via
     #   -r requirements/prod.txt
     #   celery
 build==1.0.3
     # via pip-tools
-celery==5.4.0
+celery==5.5.3
     # via -r requirements/prod.txt
 certifi==2024.7.4
     # via
@@ -62,13 +62,15 @@ inflection==0.5.1
     # via pytest-factoryboy
 iniconfig==2.0.0
     # via pytest
-kombu==5.3.4
+kombu==5.5.4
     # via
     #   -r requirements/prod.txt
     #   celery
-packaging==23.2
+packaging==25.0
     # via
+    #   -r requirements/prod.txt
     #   build
+    #   kombu
     #   pytest
     #   pytest-factoryboy
 pip-sync-faster==0.0.5
@@ -116,10 +118,10 @@ supervisor==4.2.5
     # via -r requirements/prod.txt
 typing-extensions==4.9.0
     # via pytest-factoryboy
-tzdata==2023.4
+tzdata==2025.2
     # via
     #   -r requirements/prod.txt
-    #   celery
+    #   kombu
 urllib3==2.5.0
     # via
     #   -r requirements/prod.txt
