@@ -8,13 +8,13 @@ amqp==5.2.0
     # via
     #   -r requirements/prod.txt
     #   kombu
-billiard==4.2.0
+billiard==4.2.1
     # via
     #   -r requirements/prod.txt
     #   celery
 build==1.2.1
     # via pip-tools
-celery==5.4.0
+celery==5.5.3
     # via -r requirements/prod.txt
 certifi==2024.7.4
     # via
@@ -42,7 +42,7 @@ click-repl==0.3.0
     #   celery
 importlib-metadata==7.1.0
     # via pip-sync-faster
-kombu==5.3.4
+kombu==5.5.4
     # via
     #   -r requirements/prod.txt
     #   celery
@@ -50,8 +50,11 @@ mypy==1.16.1
     # via -r requirements/typecheck.in
 mypy-extensions==1.0.0
     # via mypy
-packaging==24.1
-    # via build
+packaging==25.0
+    # via
+    #   -r requirements/prod.txt
+    #   build
+    #   kombu
 pathspec==0.12.1
     # via mypy
 pip-sync-faster==0.0.5
@@ -82,10 +85,10 @@ supervisor==4.2.5
     # via -r requirements/prod.txt
 typing-extensions==4.9.0
     # via mypy
-tzdata==2023.4
+tzdata==2025.2
     # via
     #   -r requirements/prod.txt
-    #   celery
+    #   kombu
 urllib3==2.5.0
     # via
     #   -r requirements/prod.txt

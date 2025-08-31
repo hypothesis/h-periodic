@@ -6,9 +6,9 @@
 #
 amqp==5.2.0
     # via kombu
-billiard==4.2.0
+billiard==4.2.1
     # via celery
-celery==5.4.0
+celery==5.5.3
     # via -r requirements/prod.in
 certifi==2024.7.4
     # via sentry-sdk
@@ -24,8 +24,10 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-kombu==5.3.4
+kombu==5.5.4
     # via celery
+packaging==25.0
+    # via kombu
 prompt-toolkit==3.0.43
     # via click-repl
 python-dateutil==2.8.2
@@ -36,8 +38,8 @@ six==1.16.0
     # via python-dateutil
 supervisor==4.2.5
     # via -r requirements/prod.in
-tzdata==2023.4
-    # via celery
+tzdata==2025.2
+    # via kombu
 urllib3==2.5.0
     # via sentry-sdk
 vine==5.1.0
