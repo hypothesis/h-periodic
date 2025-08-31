@@ -34,7 +34,7 @@ sentry-sdk==2.34.1
     # via -r requirements/prod.in
 six==1.16.0
     # via python-dateutil
-supervisor==4.2.5
+supervisor==4.3.0
     # via -r requirements/prod.in
 tzdata==2023.4
     # via celery
@@ -47,7 +47,3 @@ vine==5.1.0
     #   kombu
 wcwidth==0.2.13
     # via prompt-toolkit
-
-# The following packages are considered to be unsafe in a requirements file:
-setuptools==78.1.1
-    # via supervisor
