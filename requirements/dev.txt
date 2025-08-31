@@ -110,7 +110,7 @@ six==1.16.0
     #   python-dateutil
 stack-data==0.6.3
     # via ipython
-supervisor==4.2.5
+supervisor==4.3.0
     # via
     #   -r requirements/dev.in
     #   -r requirements/prod.txt
@@ -147,7 +147,4 @@ zipp==3.19.1
 pip==23.3.2
     # via pip-tools
 setuptools==78.1.1
-    # via
-    #   -r requirements/prod.txt
-    #   pip-tools
-    #   supervisor
+    # via pip-tools
