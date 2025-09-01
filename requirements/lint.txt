@@ -149,7 +149,7 @@ pygments==2.19.2
     #   -r requirements/functests.txt
     #   -r requirements/tests.txt
     #   pytest
-pylint==3.3.7
+pylint==3.3.8
     # via -r requirements/lint.in
 pyproject-hooks==1.0.0
     # via
