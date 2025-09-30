@@ -52,7 +52,7 @@ faker==22.0.0
     # via factory-boy
 importlib-metadata==7.0.1
     # via pip-sync-faster
-ipython==9.5.0
+ipython==9.6.0
     # via -r requirements/dev.in
 ipython-pygments-lexers==1.1.1
     # via ipython
