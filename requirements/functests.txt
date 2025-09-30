@@ -71,7 +71,7 @@ packaging==25.0
     #   pytest-factoryboy
 pip-sync-faster==0.0.5
     # via -r requirements/functests.in
-pip-tools==7.4.1
+pip-tools==7.5.0
     # via
     #   -r requirements/functests.in
     #   pip-sync-faster

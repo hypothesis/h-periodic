@@ -59,7 +59,7 @@ pathspec==0.12.1
     # via mypy
 pip-sync-faster==0.0.5
     # via -r requirements/typecheck.in
-pip-tools==7.4.1
+pip-tools==7.5.0
     # via
     #   -r requirements/typecheck.in
     #   pip-sync-faster
