@@ -48,7 +48,7 @@ factory-boy==3.3.3
     #   pytest-factoryboy
 faker==22.0.0
     # via factory-boy
-freezegun==1.5.4
+freezegun==1.5.5
     # via -r requirements/tests.in
 h-matchers==1.2.17
     # via -r requirements/tests.in
