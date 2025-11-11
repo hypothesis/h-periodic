@@ -49,3 +49,7 @@ vine==5.1.0
     #   kombu
 wcwidth==0.2.13
     # via prompt-toolkit
+
+# The following packages are considered to be unsafe in a requirements file:
+pip==25.2
+    # via -r requirements/prod.in

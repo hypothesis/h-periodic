@@ -44,18 +44,18 @@ coverage[toml]==7.10.7
     # via pytest-cov
 factory-boy==3.3.3
     # via
-    #   -r tests.in
+    #   -r requirements/tests.in
     #   pytest-factoryboy
 faker==22.0.0
     # via factory-boy
 freezegun==1.5.5
-    # via -r tests.in
+    # via -r requirements/tests.in
 h-matchers==1.2.17
-    # via -r tests.in
+    # via -r requirements/tests.in
 h-testkit==1.0.1
-    # via -r tests.in
+    # via -r requirements/tests.in
 httpretty==1.1.4
-    # via -r tests.in
+    # via -r requirements/tests.in
 importlib-metadata==7.0.1
     # via pip-sync-faster
 inflection==0.5.1
@@ -74,10 +74,10 @@ packaging==25.0
     #   pytest
     #   pytest-factoryboy
 pip-sync-faster==0.0.5
-    # via -r tests.in
+    # via -r requirements/tests.in
 pip-tools==7.5.0
     # via
-    #   -r tests.in
+    #   -r requirements/tests.in
     #   pip-sync-faster
 pluggy==1.5.0
     # via
@@ -95,13 +95,13 @@ pyproject-hooks==1.0.0
     #   pip-tools
 pytest==8.4.2
     # via
-    #   -r tests.in
+    #   -r requirements/tests.in
     #   pytest-cov
     #   pytest-factoryboy
 pytest-cov==7.0.0
-    # via -r tests.in
+    # via -r requirements/tests.in
 pytest-factoryboy==2.8.1
-    # via -r tests.in
+    # via -r requirements/tests.in
 python-dateutil==2.8.2
     # via
     #   -r prod.txt
@@ -142,7 +142,9 @@ zipp==3.19.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==25.3
-    # via pip-tools
+pip==25.2
+    # via
+    #   -r prod.txt
+    #   pip-tools
 setuptools==78.1.1
     # via pip-tools

@@ -47,7 +47,7 @@ kombu==5.5.4
     #   -r prod.txt
     #   celery
 mypy==1.17.1
-    # via -r typecheck.in
+    # via -r requirements/typecheck.in
 mypy-extensions==1.0.0
     # via mypy
 packaging==25.0
@@ -58,10 +58,10 @@ packaging==25.0
 pathspec==0.12.1
     # via mypy
 pip-sync-faster==0.0.5
-    # via -r typecheck.in
+    # via -r requirements/typecheck.in
 pip-tools==7.5.0
     # via
-    #   -r typecheck.in
+    #   -r requirements/typecheck.in
     #   pip-sync-faster
 prompt-toolkit==3.0.43
     # via
@@ -109,7 +109,9 @@ zipp==3.19.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==25.3
-    # via pip-tools
+pip==25.2
+    # via
+    #   -r prod.txt
+    #   pip-tools
 setuptools==78.1.1
     # via pip-tools
