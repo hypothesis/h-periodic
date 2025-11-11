@@ -42,16 +42,16 @@ click-repl==0.3.0
     #   celery
 factory-boy==3.3.3
     # via
-    #   -r functests.in
+    #   -r requirements/functests.in
     #   pytest-factoryboy
 faker==22.0.0
     # via factory-boy
 h-matchers==1.2.17
-    # via -r functests.in
+    # via -r requirements/functests.in
 h-testkit==1.0.1
-    # via -r functests.in
+    # via -r requirements/functests.in
 httpretty==1.1.4
-    # via -r functests.in
+    # via -r requirements/functests.in
 importlib-metadata==7.0.1
     # via pip-sync-faster
 inflection==0.5.1
@@ -70,10 +70,10 @@ packaging==25.0
     #   pytest
     #   pytest-factoryboy
 pip-sync-faster==0.0.5
-    # via -r functests.in
+    # via -r requirements/functests.in
 pip-tools==7.5.0
     # via
-    #   -r functests.in
+    #   -r requirements/functests.in
     #   pip-sync-faster
 pluggy==1.5.0
     # via pytest
@@ -89,10 +89,10 @@ pyproject-hooks==1.0.0
     #   pip-tools
 pytest==8.4.2
     # via
-    #   -r functests.in
+    #   -r requirements/functests.in
     #   pytest-factoryboy
 pytest-factoryboy==2.8.1
-    # via -r functests.in
+    # via -r requirements/functests.in
 python-dateutil==2.8.2
     # via
     #   -r prod.txt
@@ -132,7 +132,9 @@ zipp==3.19.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==25.3
-    # via pip-tools
+pip==25.2
+    # via
+    #   -r prod.txt
+    #   pip-tools
 setuptools==78.1.1
     # via pip-tools
