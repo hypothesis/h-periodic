@@ -6,23 +6,23 @@
 #
 amqp==5.2.0
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   kombu
 billiard==4.2.1
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   celery
 build==1.0.3
     # via pip-tools
 celery==5.5.3
-    # via -r requirements/prod.txt
+    # via -r prod.txt
 certifi==2024.7.4
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   sentry-sdk
 click==8.1.7
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   celery
     #   click-didyoumean
     #   click-plugins
@@ -30,32 +30,32 @@ click==8.1.7
     #   pip-tools
 click-didyoumean==0.3.0
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   celery
 click-plugins==1.1.1
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   celery
 click-repl==0.3.0
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   celery
 coverage[toml]==7.10.7
     # via pytest-cov
 factory-boy==3.3.3
     # via
-    #   -r requirements/tests.in
+    #   -r tests.in
     #   pytest-factoryboy
 faker==22.0.0
     # via factory-boy
 freezegun==1.5.5
-    # via -r requirements/tests.in
+    # via -r tests.in
 h-matchers==1.2.17
-    # via -r requirements/tests.in
+    # via -r tests.in
 h-testkit==1.0.1
-    # via -r requirements/tests.in
+    # via -r tests.in
 httpretty==1.1.4
-    # via -r requirements/tests.in
+    # via -r tests.in
 importlib-metadata==7.0.1
     # via pip-sync-faster
 inflection==0.5.1
@@ -64,20 +64,20 @@ iniconfig==2.0.0
     # via pytest
 kombu==5.5.4
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   celery
 packaging==25.0
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   build
     #   kombu
     #   pytest
     #   pytest-factoryboy
 pip-sync-faster==0.0.5
-    # via -r requirements/tests.in
+    # via -r tests.in
 pip-tools==7.5.1
     # via
-    #   -r requirements/tests.in
+    #   -r tests.in
     #   pip-sync-faster
 pluggy==1.5.0
     # via
@@ -85,7 +85,7 @@ pluggy==1.5.0
     #   pytest-cov
 prompt-toolkit==3.0.43
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   click-repl
 pygments==2.19.2
     # via pytest
@@ -95,46 +95,46 @@ pyproject-hooks==1.0.0
     #   pip-tools
 pytest==8.4.2
     # via
-    #   -r requirements/tests.in
+    #   -r tests.in
     #   pytest-cov
     #   pytest-factoryboy
 pytest-cov==7.0.0
-    # via -r requirements/tests.in
+    # via -r tests.in
 pytest-factoryboy==2.8.1
-    # via -r requirements/tests.in
+    # via -r tests.in
 python-dateutil==2.8.2
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   celery
     #   faker
     #   freezegun
 sentry-sdk==2.34.1
-    # via -r requirements/prod.txt
+    # via -r prod.txt
 six==1.16.0
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   python-dateutil
 supervisor==4.3.0
-    # via -r requirements/prod.txt
+    # via -r prod.txt
 typing-extensions==4.9.0
     # via pytest-factoryboy
 tzdata==2025.2
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   kombu
 urllib3==2.5.0
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   sentry-sdk
 vine==5.1.0
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   amqp
     #   celery
     #   kombu
 wcwidth==0.2.13
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   prompt-toolkit
 wheel==0.42.0
     # via pip-tools
@@ -142,9 +142,9 @@ zipp==3.19.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==25.2
+pip==25.3
     # via
-    #   -r requirements/prod.txt
+    #   -r prod.txt
     #   pip-tools
 setuptools==78.1.1
     # via pip-tools
