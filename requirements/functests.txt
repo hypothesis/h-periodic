@@ -14,7 +14,7 @@ billiard==4.2.1
     #   celery
 build==1.0.3
     # via pip-tools
-celery==5.5.3
+celery==5.6.0
     # via -r requirements/prod.txt
 certifi==2024.7.4
     # via
@@ -40,6 +40,10 @@ click-repl==0.3.0
     # via
     #   -r requirements/prod.txt
     #   celery
+exceptiongroup==1.3.1
+    # via
+    #   -r requirements/prod.txt
+    #   celery
 factory-boy==3.3.3
     # via
     #   -r requirements/functests.in
@@ -58,7 +62,7 @@ inflection==0.5.1
     # via pytest-factoryboy
 iniconfig==2.0.0
     # via pytest
-kombu==5.5.4
+kombu==5.6.1
     # via
     #   -r requirements/prod.txt
     #   celery
@@ -106,12 +110,19 @@ six==1.16.0
     #   python-dateutil
 supervisor==4.3.0
     # via -r requirements/prod.txt
-typing-extensions==4.9.0
-    # via pytest-factoryboy
+typing-extensions==4.15.0
+    # via
+    #   -r requirements/prod.txt
+    #   exceptiongroup
+    #   pytest-factoryboy
 tzdata==2025.2
     # via
     #   -r requirements/prod.txt
     #   kombu
+tzlocal==5.3.1
+    # via
+    #   -r requirements/prod.txt
+    #   celery
 urllib3==2.5.0
     # via
     #   -r requirements/prod.txt
