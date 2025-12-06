@@ -40,7 +40,7 @@ supervisor==4.3.0
     # via -r prod.in
 tzdata==2025.2
     # via kombu
-urllib3==2.5.0
+urllib3==2.6.0
     # via sentry-sdk
 vine==5.1.0
     # via
