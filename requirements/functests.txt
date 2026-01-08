@@ -112,7 +112,7 @@ tzdata==2025.2
     # via
     #   -r prod.txt
     #   kombu
-urllib3==2.6.0
+urllib3==2.6.3
     # via
     #   -r prod.txt
     #   sentry-sdk
