@@ -81,7 +81,7 @@ prompt-toolkit==3.0.43
     # via
     #   -r prod.txt
     #   click-repl
-pygments==2.19.2
+pygments==2.20.0
     # via pytest
 pyproject-hooks==1.0.0
     # via
