@@ -157,7 +157,7 @@ pyproject-hooks==1.0.0
     #   -r tests.txt
     #   build
     #   pip-tools
-pytest==9.0.1
+pytest==9.0.3
     # via
     #   -r functests.txt
     #   -r tests.txt
