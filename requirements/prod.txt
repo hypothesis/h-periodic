@@ -9,7 +9,7 @@ amqp==5.2.0
 billiard==4.2.1
     # via celery
 celery==5.6.3
-    # via -r requirements/prod.in
+    # via -r prod.in
 certifi==2024.7.4
     # via sentry-sdk
 click==8.1.7
@@ -33,16 +33,16 @@ prompt-toolkit==3.0.43
 python-dateutil==2.8.2
     # via celery
 sentry-sdk==2.34.1
-    # via -r requirements/prod.in
+    # via -r prod.in
 six==1.16.0
     # via python-dateutil
 supervisor==4.3.0
-    # via -r requirements/prod.in
+    # via -r prod.in
 tzdata==2025.2
     # via kombu
 tzlocal==5.3.1
     # via celery
-urllib3==2.6.3
+urllib3==2.7.0
     # via sentry-sdk
 vine==5.1.0
     # via
@@ -54,4 +54,4 @@ wcwidth==0.2.13
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==25.3
-    # via -r requirements/prod.in
+    # via -r prod.in
