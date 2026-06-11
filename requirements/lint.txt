@@ -230,7 +230,7 @@ wheel==0.46.2
     #   pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==25.3
+pip==26.1
     # via
     #   -r functests.txt
     #   -r tests.txt
