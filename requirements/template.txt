@@ -21,7 +21,7 @@ click==8.1.7
     #   cookiecutter
     #   pip-tools
 cookiecutter==2.6.0
-    # via -r template.in
+    # via -r requirements/template.in
 idna==3.7
     # via requests
 jinja2==3.1.6
@@ -37,10 +37,10 @@ packaging==26.2
     #   build
     #   wheel
 pip-sync-faster==0.0.5
-    # via -r template.in
-pip-tools==7.5.2
+    # via -r requirements/template.in
+pip-tools==7.5.3
     # via
-    #   -r template.in
+    #   -r requirements/template.in
     #   pip-sync-faster
 pygments==2.17.2
     # via rich
@@ -72,7 +72,7 @@ wheel==0.46.2
 # The following packages are considered to be unsafe in a requirements file:
 pip==26.1
     # via
-    #   -r template.in
+    #   -r requirements/template.in
     #   pip-tools
 setuptools==78.1.1
     # via pip-tools
