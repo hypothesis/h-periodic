@@ -74,5 +74,5 @@ pip==26.1
     # via
     #   -r template.in
     #   pip-tools
-setuptools==78.1.1
+setuptools==83.0.0
     # via pip-tools
