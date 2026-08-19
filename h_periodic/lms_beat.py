@@ -50,6 +50,13 @@ celery.conf.update(
             "options": {"expires": 1800},
             "schedule": timedelta(hours=1),
         },
+        "sweep_stale_grading_syncs": {
+            # A GradingSync left non-terminal blocks all further grade syncing
+            # for its assignment, so it must not be allowed to sit there.
+            "task": "lms.tasks.grading.sweep_stale_grading_syncs",
+            "options": {"expires": 600},
+            "schedule": timedelta(minutes=15),
+        },
         "purge_old_launch_data": {
             "task": "lms.tasks.event.purge_launch_data",
             "schedule": timedelta(hours=1),
