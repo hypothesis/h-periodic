@@ -5,6 +5,7 @@ from datetime import timedelta
 from os import environ
 
 from celery import Celery
+from celery.schedules import crontab
 
 from h_periodic._util import asbool
 
@@ -76,6 +77,15 @@ celery.conf.update(
             "options": {"expires": 30},
             "task": "h.tasks.indexer.report_job_queue_metrics",
             "schedule": timedelta(minutes=1),
+        },
+        "sync-edu-role-contacts": {
+            "task": "h.tasks.hubspot.sync_edu_role_contacts",
+            "schedule": crontab(hour=12, minute=0),
+        },
+        "report-num-pending-edu-role-contacts": {
+            "options": {"expires": 1800},
+            "task": "h.tasks.hubspot.report_num_pending_edu_role_contacts",
+            "schedule": timedelta(hours=1),
         },
     },
 )
